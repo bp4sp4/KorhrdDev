@@ -37,22 +37,22 @@ export default function LayoutPage() {
           <div className={styles.exampleGroup}>
             <div className={styles.layout_wrapper}>
               <header className={styles.layout_header}>
-                <p style={{ margin: 0, fontSize: '0.875rem', color: '#6b7280' }}>헤더 내용</p>
+                <p className={styles.exampleText}>헤더 내용</p>
               </header>
               <main className={styles.layout_content}>
                 <div className={styles.layout_container}>
-                  <p style={{ margin: 0, fontSize: '0.875rem', color: '#6b7280' }}>메인 콘텐츠</p>
+                  <p className={styles.exampleText}>메인 콘텐츠</p>
                 </div>
               </main>
               <footer className={styles.layout_footer}>
-                <p style={{ margin: 0, fontSize: '0.875rem', color: '#6b7280' }}>푸터 내용</p>
+                <p className={styles.exampleText}>푸터 내용</p>
               </footer>
             </div>
           </div>
 
-          <div style={{ backgroundColor: '#111827', color: '#f3f4f6', padding: '1.5rem', borderRadius: '0.5rem', marginTop: '1rem' }}>
-            <h4 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>자주 사용하는 레이아웃 클래스</h4>
-            <ul style={{ margin: 0, lineHeight: '1.75', fontSize: '0.875rem' }}>
+          <div className={styles.infoBox}>
+            <h4 className={styles.infoBoxTitle}>자주 사용하는 레이아웃 클래스</h4>
+            <ul className={styles.infoBoxList}>
               <li><code>.layout_wrapper</code> - 전체 페이지를 감싸는 최상위 컨테이너</li>
               <li><code>.layout_container</code> - 콘텐츠의 최대 너비를 제한하는 컨테이너</li>
               <li><code>.layout_sidebar</code> - 왼쪽 또는 오른쪽에 위치하는 사이드바</li>

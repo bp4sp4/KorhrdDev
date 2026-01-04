@@ -58,15 +58,41 @@ export default function ColorPalettePage() {
     <div className={styles.container}>
       <h1 className={styles.title}>색상 팔레트</h1>
       <p className={styles.description}>
-        프로젝트에서 사용하는 색상 목록입니다. 여기에 있는 색상만 사용하면 디자인이 일관되게 보입니다. 
-        각 색상을 클릭하면 색상 코드가 복사됩니다.
+        프로젝트에서 사용하는 색상 목록입니다. 여기에 있는 색상만 사용하면 디자인이 일관되게 보입니다.
       </p>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>사용 방법</h2>
+        <div className={styles.usageBox}>
+          <p className={styles.usageText}>
+            <strong>1. 색상 선택하기</strong><br />
+            아래에 있는 색상 팔레트에서 원하는 색상을 찾으세요. 각 색상은 번호가 작을수록 진하고, 번호가 클수록 밝습니다.
+          </p>
+          <p className={styles.usageText}>
+            <strong>2. 색상 복사하기</strong><br />
+            색상 박스를 클릭하면 색상 코드(예: #0051FF)가 자동으로 복사됩니다. 복사된 색상 코드를 CSS나 코드에 바로 사용할 수 있습니다.
+          </p>
+          <p className={styles.usageText}>
+            <strong>3. 색상 사용하기</strong><br />
+            복사한 색상 코드를 CSS 파일이나 인라인 스타일에 붙여넣어 사용하세요. 예: <code>color: #0051FF;</code>
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>색상 팔레트</h2>
+        <p className={styles.sectionDescription}>
+          아래 색상들을 클릭하면 색상 코드가 복사됩니다. 마우스를 올리면 색상 코드가 표시됩니다.
+        </p>
 
       <div className={styles.wrapper}>
         <div className={styles.desktop2}>
             <div className={styles.paletteContainer}>
               <div className={styles.palette}>
-                <h3 className={styles.paletteTitle}>Blue</h3>
+                <div className={styles.paletteHeader}>
+                  <h3 className={styles.paletteTitle}>Blue</h3>
+                  <p className={styles.paletteDescription}>주요 색상으로, 버튼, 링크, 강조 영역 등에 사용합니다.</p>
+                </div>
                 <div className={styles.swatches}>
                   {blueColors.map((color, index) => (
                     <div 
@@ -93,7 +119,10 @@ export default function ColorPalettePage() {
               </div>
 
               <div className={styles.palette}>
-                <h3 className={styles.paletteTitle}>Green</h3>
+                <div className={styles.paletteHeader}>
+                  <h3 className={styles.paletteTitle}>Green</h3>
+                  <p className={styles.paletteDescription}>성공, 완료, 긍정적인 상태를 나타낼 때 사용합니다.</p>
+                </div>
                 <div className={styles.swatches}>
                   {greenColors.map((color, index) => (
                     <div 
@@ -120,7 +149,10 @@ export default function ColorPalettePage() {
               </div>
 
               <div className={styles.palette}>
-                <h3 className={styles.paletteTitle}>Gray</h3>
+                <div className={styles.paletteHeader}>
+                  <h3 className={styles.paletteTitle}>Gray</h3>
+                  <p className={styles.paletteDescription}>텍스트, 배경, 구분선 등 일반적인 UI 요소에 사용합니다.</p>
+                </div>
                 <div className={styles.swatches}>
                   {grayColors.map((color, index) => (
                     <div 
@@ -148,6 +180,21 @@ export default function ColorPalettePage() {
             </div>
           </div>
       </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>색상 사용 팁</h2>
+        <div className={styles.tipBox}>
+          <p className={styles.tipText}>
+            <strong>💡 팁:</strong> 색상은 번호가 작을수록 진하고, 번호가 클수록 밝습니다. 
+            예를 들어 Blue 1은 가장 진한 파란색이고, Blue 10은 가장 밝은 파란색입니다.
+          </p>
+          <p className={styles.tipText}>
+            <strong>💡 팁:</strong> 텍스트 색상으로 사용할 때는 진한 색상(Gray 1~4)을, 
+            배경 색상으로 사용할 때는 밝은 색상(Gray 7~10)을 사용하는 것이 좋습니다.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import '../styles/base.css'
+import '../styles/layout.css'
 import '../styles/components.css'
 
 export const metadata: Metadata = {
-  title: '프론트엔드 개발 가이드',
-  description: '회사 프론트엔드 개발 표준 가이드',
+  title: '한평생 개발본부',
+  description: '한평생 개발본부 - 개발&디자인 가이드',
 }
 
 export default function RootLayout({

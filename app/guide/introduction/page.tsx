@@ -4,19 +4,19 @@ import CopyableCodeBlock from '../components/CopyableCodeBlock'
 export default function IntroductionPage() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>프론트엔드 개발 가이드</h1>
+      <h1 className={styles.title}>프론트엔드 개발 표준 가이드</h1>
       <p className={styles.description}>
-        회사 프론트엔드 개발 표준 및 베스트 프랙티스를 안내하는 가이드입니다.
+        일관된 코드 품질과 개발 효율성을 위한 프론트엔드 개발 표준 및 디자인 시스템 가이드입니다.
       </p>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>가이드를 만든 이유</h2>
+        <h2 className={styles.sectionTitle}>표준 가이드를 만든 이유</h2>
         <p className={styles.text}>
           웹사이트를 만들 때마다 "이 클래스 이름을 어떻게 지을까?", "어떤 스타일을 사용해야 할까?" 같은 고민을 하게 됩니다.
           이런 고민을 줄이고, 누구나 쉽게 따라할 수 있는 <strong>표준 가이드</strong>를 만들었습니다.
         </p>
         <p className={styles.text}>
-        개발 가이드를 따르면:
+        표준 가이드를 따르면:
         </p>
         <ul className={styles.list}>
           <li>코드를 작성할 때 매번 고민하지 않아도 됩니다</li>
@@ -27,7 +27,7 @@ export default function IntroductionPage() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>개발 가이드의 장점</h2>
+        <h2 className={styles.sectionTitle}>표준 가이드의 장점</h2>
         <div className={styles.grid}>
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>쉽게 시작할 수 있어요</h3>

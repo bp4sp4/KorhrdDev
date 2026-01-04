@@ -1,5 +1,4 @@
 .container {
-  max-width: 900px;
 }
 
 .title {
@@ -184,5 +183,36 @@
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+}
+
+/* 정보 박스 스타일 */
+.infoBox {
+  background-color: #111827;
+  color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.infoBoxTitle {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.infoBoxList {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 0.875rem;
+}
+
+/* 카드 예제 텍스트 스타일 */
+.cardTitle {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.cardText {
+  margin: 0;
+  color: #6b7280;
 }
 

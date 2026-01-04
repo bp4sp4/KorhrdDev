@@ -36,14 +36,14 @@ export default function ComponentPage() {
           <p className={styles.exampleLabel}>실제 화면에서 보이는 모습</p>
           <div className={styles.exampleGroup}>
             <div className={styles.ui_card}>
-              <h3 style={{ margin: 0, marginBottom: '0.5rem', fontSize: '1.125rem' }}>카드 제목</h3>
-              <p style={{ margin: 0, color: '#6b7280' }}>카드 내용</p>
+              <h3 className={styles.cardTitle}>카드 제목</h3>
+              <p className={styles.cardText}>카드 내용</p>
             </div>
           </div>
 
-          <div style={{ backgroundColor: '#111827', color: '#f3f4f6', padding: '1.5rem', borderRadius: '0.5rem' }}>
-            <h4 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>자주 사용하는 UI 컴포넌트 클래스</h4>
-            <ul style={{ margin: 0, paddingLeft: '1.5rem', lineHeight: '1.75', fontSize: '0.875rem' }}>
+          <div className={styles.infoBox}>
+            <h4 className={styles.infoBoxTitle}>자주 사용하는 UI 컴포넌트 클래스</h4>
+            <ul className={styles.infoBoxList}>
               <li><code>.ui_card</code> - 카드 형태의 컨테이너</li>
               <li><code>.ui_modal</code> - 팝업 창을 감싸는 컨테이너</li>
               <li><code>.ui_modal_backdrop</code> - 모달 뒤에 깔리는 어두운 배경</li>

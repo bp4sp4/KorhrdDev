@@ -16,13 +16,16 @@
 
 .layout_sidebar {
   width: 280px;
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: #f9fafb;
   border-right: 1px solid #e5e7eb;
   padding: 1.5rem;
   position: sticky;
   top: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .layout_content {
@@ -33,7 +36,7 @@
 
 .layout_wrapper {
   display: flex;
-  min-height: 100vh;
+  align-items: flex-start;
 }
 
 /* ============================================

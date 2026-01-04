@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './sidebar.module.css'
@@ -21,6 +21,7 @@ type MenuItem = MenuItemWithChildren | MenuItemWithHref
 const menuItems: MenuItem[] = [
   { href: '/guide/introduction', label: '가이드 소개' },
   { href: '/guide/file-structure', label: '기본 파일 구조' },
+  { href: '/guide/layout-tsx', label: 'layout.tsx 가이드' },
   {
     label: '클래스명 가이드',
     children: [
@@ -65,44 +66,65 @@ const menuItems: MenuItem[] = [
   { href: '/guide/color-palette', label: '색상 팔레트' },
   { href: '/guide/layout-guide', label: '레이아웃 가이드' },
   { href: '/guide/logo-guide', label: '로고 가이드' },
+  { href: '/guide/form-guide', label: '폼 가이드' },
+  { href: '/guide/error-handling', label: '에러 처리 & 상태' },
+  { href: '/guide/responsive-design', label: '반응형 디자인 가이드' },
 ]
 
 export default function Sidebar() {
   const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
   const [openMenus, setOpenMenus] = useState<Record<string, boolean>>({})
   const [openSubMenus, setOpenSubMenus] = useState<Record<string, boolean>>({})
+  const [activePath, setActivePath] = useState<string | null>(null)
 
-  // 초기 로드 시 활성화된 메뉴 자동으로 열기
+  // 클라이언트에서만 pathname 기반으로 초기 메뉴 상태 계산
   useEffect(() => {
+    setMounted(true)
+    setActivePath(pathname || null)
+    
     const initialOpenMenus: Record<string, boolean> = {}
     const initialOpenSubMenus: Record<string, boolean> = {}
 
-    menuItems.forEach((item, index) => {
-      if ('children' in item && item.children) {
-        const isParentActive = item.children.some(child => {
-          if ('children' in child && child.children) {
-            return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
-          }
-          return 'href' in child && pathname === child.href
-        })
-        if (isParentActive) {
-          initialOpenMenus[`menu-${index}`] = true
-          
-          item.children.forEach((child, childIndex) => {
+    if (pathname) {
+      menuItems.forEach((item, index) => {
+        if ('children' in item && item.children) {
+          const isParentActive = item.children.some(child => {
             if ('children' in child && child.children) {
-              const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
-              if (isChildParentActive) {
-                initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
-              }
+              return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
             }
+            return 'href' in child && pathname === child.href
           })
+          if (isParentActive) {
+            initialOpenMenus[`menu-${index}`] = true
+            
+            item.children.forEach((child, childIndex) => {
+              if ('children' in child && child.children) {
+                const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
+                if (isChildParentActive) {
+                  initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
+                }
+              }
+            })
+          }
         }
-      }
-    })
+      })
 
-    setOpenMenus(initialOpenMenus)
-    setOpenSubMenus(initialOpenSubMenus)
+      setOpenMenus(initialOpenMenus)
+      setOpenSubMenus(initialOpenSubMenus)
+    }
   }, [pathname])
+
+  // 서버와 클라이언트 초기 렌더링 일치를 위해 mounted 전까지는 항상 닫힌 상태
+  const getMenuState = (menuKey: string) => {
+    if (!mounted) return false
+    return openMenus[menuKey] ?? false
+  }
+
+  const getSubMenuState = (subMenuKey: string) => {
+    if (!mounted) return false
+    return openSubMenus[subMenuKey] ?? false
+  }
 
   const toggleMenu = (menuKey: string) => {
     setOpenMenus(prev => ({
@@ -126,18 +148,18 @@ export default function Sidebar() {
         </Link>
       </div>
       
-      <nav className={styles.nav}>
-        <ul className={styles.navList}>
+      <nav className={styles.nav} suppressHydrationWarning>
+        <ul className={styles.navList} suppressHydrationWarning>
           {menuItems.map((item, index) => {
             if ('children' in item && item.children) {
               const menuKey = `menu-${index}`
-              const isOpen = openMenus[menuKey] ?? false
-              const isParentActive = item.children.some(child => {
+              const isParentActive = mounted && activePath ? item.children.some(child => {
                 if ('children' in child && child.children) {
-                  return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
+                  return child.children.some(grandchild => 'href' in grandchild && activePath === grandchild.href)
                 }
-                return 'href' in child && pathname === child.href
-              })
+                return 'href' in child && activePath === child.href
+              }) : false
+              const isOpen = getMenuState(menuKey)
               // 메뉴가 열려있고 활성화된 자식이 있을 때만 파란색 표시
               const shouldShowActive = isOpen && isParentActive
 
@@ -147,7 +169,7 @@ export default function Sidebar() {
                     className={`${styles.navParent} ${styles.navParentButton} ${shouldShowActive ? styles.navParentActive : ''}`}
                     onClick={() => toggleMenu(menuKey)}
                   >
-                    <a>{item.label}</a>
+                    <span>{item.label}</span>
                     <svg
                       className={`${styles.chevron} ${isOpen ? styles.chevronOpen : styles.chevronClosed}`}
                       width="16"
@@ -162,9 +184,9 @@ export default function Sidebar() {
                   <ul className={`${styles.navSubList} ${isOpen ? styles.navSubListOpen : styles.navSubListClosed}`}>
                     {item.children.map((child, childIndex) => {
                       if ('children' in child && child.children) {
-                        const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
+                        const isChildParentActive = mounted && activePath ? child.children.some(grandchild => 'href' in grandchild && activePath === grandchild.href) : false
                         const subMenuKey = `submenu-${index}-${childIndex}`
-                        const isSubOpen = openSubMenus[subMenuKey] ?? false
+                        const isSubOpen = getSubMenuState(subMenuKey)
                         
                         return (
                           <li key={child.label} className={styles.navSubItem}>
@@ -187,7 +209,7 @@ export default function Sidebar() {
                             <ul className={`${styles.navSubSubList} ${isSubOpen ? styles.navSubSubListOpen : styles.navSubSubListClosed}`}>
                               {child.children.map((grandchild) => {
                                 if ('href' in grandchild) {
-                                  const isActive = pathname === grandchild.href
+                                  const isActive = mounted && activePath === grandchild.href
                                   return (
                                     <li key={grandchild.href} className={styles.navSubSubItem}>
                                       <Link
@@ -205,7 +227,7 @@ export default function Sidebar() {
                           </li>
                         )
                       } else if ('href' in child) {
-                        const isActive = pathname === child.href
+                        const isActive = mounted && activePath === child.href
                         return (
                           <li key={child.href} className={styles.navSubItem}>
                             <Link
@@ -223,7 +245,7 @@ export default function Sidebar() {
                 </li>
               )
             } else if ('href' in item) {
-              const isActive = pathname === item.href
+              const isActive = mounted && activePath === item.href
               return (
                 <li key={item.href} className={styles.navItem}>
                   <Link

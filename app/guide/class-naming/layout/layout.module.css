@@ -1,5 +1,4 @@
 .container {
-  max-width: 900px;
 }
 
 .title {
@@ -163,5 +162,32 @@
   background-color: #f9fafb;
   padding: 1rem;
   border-top: 1px solid #e5e7eb;
+}
+
+/* 정보 박스 스타일 */
+.infoBox {
+  background-color: #111827;
+  color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.infoBoxTitle {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.infoBoxList {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 0.875rem;
+}
+
+/* 예제 텍스트 스타일 */
+.exampleText {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 

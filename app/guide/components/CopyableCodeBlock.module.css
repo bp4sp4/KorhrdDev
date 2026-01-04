@@ -1,6 +1,7 @@
 .codeBlockWrapper {
   position: relative;
   margin-bottom: 1rem;
+  max-width: 900px;
 }
 
 .codeBlock {

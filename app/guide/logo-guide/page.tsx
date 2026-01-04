@@ -20,7 +20,7 @@ const LogoCard = ({ src, alt, fileName, isDark = false }: LogoItem) => {
 
   const handleDownload = async () => {
     try {
-      const imageUrl = `/images/${encodeURIComponent(src)}`
+      const imageUrl = src.startsWith('/') ? src : `/images/${encodeURIComponent(src)}`
       const response = await fetch(imageUrl)
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)
@@ -49,7 +49,7 @@ const LogoCard = ({ src, alt, fileName, isDark = false }: LogoItem) => {
         title="클릭하여 다운로드"
       >
         <img 
-          src={`/images/${encodeURIComponent(src)}`}
+          src={src.startsWith('/') ? src : `/images/${encodeURIComponent(src)}`}
           alt={alt}
           className={styles.logoImage}
         />
@@ -134,6 +134,17 @@ export default function LogoGuidePage() {
           프로젝트에서 사용 가능한 모든 로고 이미지입니다. 각 로고는 밝은 배경용(black)과 어두운 배경용(white) 버전을 제공합니다.
           이미지를 클릭하면 다운로드가 가능합니다.
         </p>
+
+        <div className={styles.subsection}>
+          <h3 className={styles.subsectionTitle}>Favicon</h3>
+          <div className={styles.logoGrid}>
+            <LogoCard 
+              src="/favicon.ico"
+              alt="favicon"
+              fileName="favicon.ico"
+            />
+          </div>
+        </div>
 
         <div className={styles.subsection}>
           <h3 className={styles.subsectionTitle}>심볼</h3>
