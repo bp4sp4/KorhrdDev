@@ -5,7 +5,19 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './sidebar.module.css'
 
-const menuItems = [
+type MenuItemWithChildren = {
+  label: string
+  children: MenuItem[]
+}
+
+type MenuItemWithHref = {
+  href: string
+  label: string
+}
+
+type MenuItem = MenuItemWithChildren | MenuItemWithHref
+
+const menuItems: MenuItem[] = [
   { href: '/guide/file-structure', label: '기본 파일 구조' },
   {
     label: '클래스명 가이드',
@@ -59,18 +71,18 @@ export default function Sidebar() {
     const initialOpenSubMenus: Record<string, boolean> = {}
 
     menuItems.forEach((item, index) => {
-      if ('children' in item) {
+      if ('children' in item && item.children) {
         const isParentActive = item.children.some(child => {
-          if ('children' in child) {
+          if ('children' in child && child.children) {
             return child.children.some(grandchild => pathname === grandchild.href)
           }
-          return pathname === child.href
+          return 'href' in child && pathname === child.href
         })
         if (isParentActive) {
           initialOpenMenus[`menu-${index}`] = true
           
           item.children.forEach((child, childIndex) => {
-            if ('children' in child) {
+            if ('children' in child && child.children) {
               const isChildParentActive = child.children.some(grandchild => pathname === grandchild.href)
               if (isChildParentActive) {
                 initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
@@ -110,12 +122,12 @@ export default function Sidebar() {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {menuItems.map((item, index) => {
-            if ('children' in item) {
+            if ('children' in item && item.children) {
               const isParentActive = item.children.some(child => {
-                if ('children' in child) {
+                if ('children' in child && child.children) {
                   return child.children.some(grandchild => pathname === grandchild.href)
                 }
-                return pathname === child.href
+                return 'href' in child && pathname === child.href
               })
               const menuKey = `menu-${index}`
               const isOpen = openMenus[menuKey] ?? false
@@ -140,7 +152,7 @@ export default function Sidebar() {
                   </button>
                   <ul className={`${styles.navSubList} ${isOpen ? styles.navSubListOpen : styles.navSubListClosed}`}>
                     {item.children.map((child, childIndex) => {
-                      if ('children' in child) {
+                      if ('children' in child && child.children) {
                         const isChildParentActive = child.children.some(grandchild => pathname === grandchild.href)
                         const subMenuKey = `submenu-${index}-${childIndex}`
                         const isSubOpen = openSubMenus[subMenuKey] ?? false
@@ -180,7 +192,7 @@ export default function Sidebar() {
                             </ul>
                           </li>
                         )
-                      } else {
+                      } else if ('href' in child) {
                         const isActive = pathname === child.href
                         return (
                           <li key={child.href} className={styles.navSubItem}>
@@ -193,11 +205,12 @@ export default function Sidebar() {
                           </li>
                         )
                       }
+                      return null
                     })}
                   </ul>
                 </li>
               )
-            } else {
+            } else if ('href' in item) {
               const isActive = pathname === item.href
               return (
                 <li key={item.href} className={styles.navItem}>
@@ -210,6 +223,7 @@ export default function Sidebar() {
                 </li>
               )
             }
+            return null
           })}
         </ul>
       </nav>
