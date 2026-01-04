@@ -18,6 +18,7 @@ type MenuItemWithHref = {
 type MenuItem = MenuItemWithChildren | MenuItemWithHref
 
 const menuItems: MenuItem[] = [
+  { href: '/guide/introduction', label: '가이드 소개' },
   { href: '/guide/file-structure', label: '기본 파일 구조' },
   {
     label: '클래스명 가이드',
@@ -74,7 +75,7 @@ export default function Sidebar() {
       if ('children' in item && item.children) {
         const isParentActive = item.children.some(child => {
           if ('children' in child && child.children) {
-            return child.children.some(grandchild => pathname === grandchild.href)
+            return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
           }
           return 'href' in child && pathname === child.href
         })
@@ -83,7 +84,7 @@ export default function Sidebar() {
           
           item.children.forEach((child, childIndex) => {
             if ('children' in child && child.children) {
-              const isChildParentActive = child.children.some(grandchild => pathname === grandchild.href)
+              const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
               if (isChildParentActive) {
                 initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
               }
@@ -125,7 +126,7 @@ export default function Sidebar() {
             if ('children' in item && item.children) {
               const isParentActive = item.children.some(child => {
                 if ('children' in child && child.children) {
-                  return child.children.some(grandchild => pathname === grandchild.href)
+                  return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
                 }
                 return 'href' in child && pathname === child.href
               })
@@ -153,7 +154,7 @@ export default function Sidebar() {
                   <ul className={`${styles.navSubList} ${isOpen ? styles.navSubListOpen : styles.navSubListClosed}`}>
                     {item.children.map((child, childIndex) => {
                       if ('children' in child && child.children) {
-                        const isChildParentActive = child.children.some(grandchild => pathname === grandchild.href)
+                        const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
                         const subMenuKey = `submenu-${index}-${childIndex}`
                         const isSubOpen = openSubMenus[subMenuKey] ?? false
                         
@@ -177,17 +178,20 @@ export default function Sidebar() {
                             </button>
                             <ul className={`${styles.navSubSubList} ${isSubOpen ? styles.navSubSubListOpen : styles.navSubSubListClosed}`}>
                               {child.children.map((grandchild) => {
-                                const isActive = pathname === grandchild.href
-                                return (
-                                  <li key={grandchild.href} className={styles.navSubSubItem}>
-                                    <Link
-                                      href={grandchild.href}
-                                      className={`${styles.navLink} ${isActive ? styles.navLinkActive : styles.navLinkInactive}`}
-                                    >
-                                      {grandchild.label}
-                                    </Link>
-                                  </li>
-                                )
+                                if ('href' in grandchild) {
+                                  const isActive = pathname === grandchild.href
+                                  return (
+                                    <li key={grandchild.href} className={styles.navSubSubItem}>
+                                      <Link
+                                        href={grandchild.href}
+                                        className={`${styles.navLink} ${isActive ? styles.navLinkActive : styles.navLinkInactive}`}
+                                      >
+                                        {grandchild.label}
+                                      </Link>
+                                    </li>
+                                  )
+                                }
+                                return null
                               })}
                             </ul>
                           </li>

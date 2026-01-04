@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-  redirect('/guide/class-naming')
+  redirect('/guide/introduction')
 }
 
