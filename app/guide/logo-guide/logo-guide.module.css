@@ -1,0 +1,194 @@
+.container {
+  max-width: 900px;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.subsection {
+  margin-bottom: 2rem;
+}
+
+.subsectionTitle {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.text {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .logoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .logoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .logoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.logoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.logoImageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 150px;
+}
+
+.logoImageWrapper:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.logoImageWrapper:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+.logoImageWrapper.darkBg {
+  background-color: #1f2937;
+}
+
+.logoImage {
+  max-width: 100%;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.downloadOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.downloadButtons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.downloadBtn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.downloadBtn:active {
+  transform: translateY(0);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logoFileName {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+  word-break: break-all;
+}
+

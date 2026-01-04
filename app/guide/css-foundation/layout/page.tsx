@@ -1,0 +1,96 @@
+import styles from './layout.module.css'
+import CopyableCodeBlock from '../../components/CopyableCodeBlock'
+
+export default function LayoutPage() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>layout.css</h1>
+      <p className={styles.description}>
+        페이지의 레이아웃 구조를 만드는 클래스들을 정의하는 파일입니다. 
+        사이드바, 헤더, 푸터, 컨테이너 등 페이지의 큰 틀을 잡을 때 사용합니다.
+      </p>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>파일 내용</h2>
+        <p className={styles.text}>
+          아래 코드를 복사해서 <code>styles/layout.css</code> 파일로 저장하세요.
+        </p>
+        <CopyableCodeBlock code={`/**
+ * Layout Styles
+ * 레이아웃 관련 스타일
+ */
+
+/* ============================================
+   Layout Wrapper
+   ============================================ */
+
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ============================================
+   Layout Container
+   ============================================ */
+
+.layout-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   Layout Sidebar
+   ============================================ */
+
+.layout-sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+/* ============================================
+   Layout Content
+   ============================================ */
+
+.layout-content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+/* ============================================
+   Layout Header
+   ============================================ */
+
+.layout-header {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ============================================
+   Layout Footer
+   ============================================ */
+
+.layout-footer {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}`} />
+      </section>
+    </div>
+  )
+}

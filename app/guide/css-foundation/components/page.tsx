@@ -1,0 +1,371 @@
+import styles from './components.module.css'
+import CopyableCodeBlock from '../../components/CopyableCodeBlock'
+
+export default function ComponentsPage() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>components.css</h1>
+      <p className={styles.description}>
+        여러 페이지에서 공통으로 사용하는 컴포넌트 스타일을 정의하는 파일입니다. 
+        레이아웃 클래스, 버튼, 텍스트 스타일, UI 컴포넌트 등이 포함되어 있습니다.
+      </p>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>파일 내용</h2>
+        <p className={styles.text}>
+          아래 코드를 복사해서 <code>styles/components.css</code> 파일로 저장하세요.
+        </p>
+        <CopyableCodeBlock code={`/**
+ * Component Styles
+ * 공통 컴포넌트 스타일
+ */
+
+/* ============================================
+   Layout Classes
+   ============================================ */
+
+.layout-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.layout-sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+.layout-content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ============================================
+   Button Classes
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  border-radius: var(--radius-base);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: var(--color-secondary-active);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border-primary);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-border-secondary);
+}
+
+.btn-ghost:active:not(:disabled) {
+  background-color: var(--color-gray-100);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   Text Classes
+   ============================================ */
+
+.text-caption {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.text-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+}
+
+.text-helper {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-normal);
+  margin-top: var(--spacing-1);
+}
+
+/* ============================================
+   UI Component Classes
+   ============================================ */
+
+.ui-card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast);
+}
+
+.ui-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.ui-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+}
+
+.ui-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-overlay);
+  z-index: var(--z-index-modal-backdrop);
+}
+
+.ui-modal-content {
+  position: relative;
+  z-index: var(--z-index-modal);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   State Classes
+   ============================================ */
+
+.is-active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-visible {
+  display: block !important;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Display */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-1 {
+  gap: var(--spacing-1);
+}
+
+.gap-2 {
+  gap: var(--spacing-2);
+}
+
+.gap-3 {
+  gap: var(--spacing-3);
+}
+
+.gap-4 {
+  gap: var(--spacing-4);
+}
+
+.gap-6 {
+  gap: var(--spacing-6);
+}
+
+.gap-8 {
+  gap: var(--spacing-8);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Spacing */
+.m-0 { margin: 0; }
+.mt-1 { margin-top: var(--spacing-1); }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-6 { margin-top: var(--spacing-6); }
+.mt-8 { margin-top: var(--spacing-8); }
+
+.mb-1 { margin-bottom: var(--spacing-1); }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.mb-6 { margin-bottom: var(--spacing-6); }
+.mb-8 { margin-bottom: var(--spacing-8); }
+
+.p-0 { padding: 0; }
+.p-2 { padding: var(--spacing-2); }
+.p-4 { padding: var(--spacing-4); }
+.p-6 { padding: var(--spacing-6); }
+.p-8 { padding: var(--spacing-8); }
+
+/* Text Alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Width & Height */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}`} />
+      </section>
+    </div>
+  )
+}
+

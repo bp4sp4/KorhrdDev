@@ -1,0 +1,113 @@
+.container {
+  max-width: 900px;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.text {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.codeBlock {
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.codeBlock pre {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.codeBlock code {
+  color: #ffffff;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.subsection {
+  margin-bottom: 1.5rem;
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.fileLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.fileLink:hover {
+  border-color: #4c5eff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.fileNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #4c5eff;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.fileTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.fileDescription {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.fileTreeWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+

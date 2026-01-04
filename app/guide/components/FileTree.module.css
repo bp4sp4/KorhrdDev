@@ -1,0 +1,31 @@
+.tree {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+}
+
+.folderIcon,
+.fileIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.name {
+  color: #111827;
+}
+
+.children {
+  margin-top: 0.25rem;
+}
+

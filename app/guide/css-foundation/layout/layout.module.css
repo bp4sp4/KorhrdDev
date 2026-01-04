@@ -1,0 +1,29 @@
+.container {
+  max-width: 900px;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.text {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+

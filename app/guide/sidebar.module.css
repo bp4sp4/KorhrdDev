@@ -1,0 +1,188 @@
+.sidebar {
+  /* layout-sidebar 클래스 사용 */
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+}
+
+.nav {
+  /* nav 스타일 */
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  /* nav item */
+}
+
+.navLink {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.navLinkActive {
+  color: #4c5eff;
+  background-color: #e0e9ff;
+  font-weight: 500;
+}
+
+.navLinkInactive {
+  color: #4b5563;
+  background-color: transparent;
+  font-weight: 400;
+}
+
+.navLinkInactive:hover {
+  background-color: #f9fafb;
+}
+
+.navParent {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.navParentButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  text-align: left;
+  transition: color 150ms ease-in-out;
+}
+
+.navParentButton:hover {
+  color: #4c5eff;
+}
+
+.navParentActive {
+  color: #4c5eff;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms ease-in-out;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.chevronSmall {
+  width: 14px;
+  height: 14px;
+}
+
+.chevronClosed {
+  transform: rotate(0deg);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.navSubList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  transition: max-height 300ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.navSubListOpen {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.navSubListClosed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navSubItem {
+  /* nav sub item */
+}
+
+.navSubParent {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.navSubParentButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-align: left;
+  transition: color 150ms ease-in-out;
+}
+
+.navSubParentButton:hover {
+  color: #4c5eff;
+}
+
+.navSubParentActive {
+  color: #4c5eff;
+}
+
+.navSubSubList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding-left: 0.75rem;
+  overflow: hidden;
+  transition: max-height 300ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.navSubSubListOpen {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.navSubSubListClosed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navSubSubItem {
+  /* nav sub sub item */
+}
+

@@ -1,0 +1,131 @@
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.desktop2 {
+  width: fit-content;
+  border: 1px solid #b7b7b7;
+  background-color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.paletteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paletteTitle {
+  font-size: 0.875rem;
+  color: #999999;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.swatches {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  width: fit-content;
+}
+
+.swatch {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swatch:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.swatch:last-child {
+  border-right: none;
+}
+
+.hexCode {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.swatch:hover .hexCode {
+  opacity: 1;
+}
+
+.copyIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 150ms ease-in-out;
+}
+
+.copyIndicator svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.5;
+}
+
+.copyIndicator span {
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

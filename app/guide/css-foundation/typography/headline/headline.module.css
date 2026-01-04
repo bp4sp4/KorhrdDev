@@ -1,0 +1,145 @@
+.container {
+  max-width: 900px;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 200ms ease-in-out;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.cardTitle {
+  flex: 1;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.spec {
+  font-size: 0.75rem;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  color: #6b7280;
+  background-color: #f9fafb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.copyButton {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.copyButton:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.copyButton:active {
+  background-color: #e5e7eb;
+}
+
+.copyButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.previewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+}
+
+.previewBox {
+ 
+  transition: all 150ms ease-in-out;
+}
+
+.previewBox:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.previewText {
+  color: #111827;
+  word-break: break-word;
+  line-height: inherit;
+}
+
+.codeSection {
+  margin-top: 1rem;
+}
+
+.codeBlock {
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.codeBlock pre {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+.codeBlock code {
+  color: #ffffff;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+}
