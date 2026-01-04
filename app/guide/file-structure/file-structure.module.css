@@ -21,7 +21,14 @@
   border-bottom: 2px solid #e5e7eb;
 }
 
+.wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
 .treeContainer {
+  flex: 1;
   background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
   position: relative;
   display: block;
@@ -106,5 +113,51 @@
   margin: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
   font-size: 0.875rem;
+}
+
+/* 설명 패널 */
+.descriptionPanel {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 2rem;
+}
+
+.descriptionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.descriptionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fileName {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0051FF;
+  padding: 0.5rem 0.75rem;
+  background-color: #f0f4ff;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e9ff;
+}
+
+.fileDescription {
+  color: #4b5563;
+  line-height: 1.75;
+  font-size: 0.875rem;
+  margin: 0;
 }
 

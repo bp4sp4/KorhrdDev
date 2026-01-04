@@ -6,11 +6,18 @@
   margin-bottom: 2rem;
 }
 
-.logo {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111827;
-  text-decoration: none;
+.logo_container {
+  display: block;
+  min-width: 120px;
+  min-height: 40px;
+}
+
+.logo_image {
+  width: 100%;
+  height: auto;
+  min-width: 120px;
+  min-height: 40px;
+  object-fit: contain;
 }
 
 .nav {
@@ -33,28 +40,30 @@
   border-radius: 0.5rem;
   text-decoration: none;
   transition: all 150ms ease-in-out;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
 }
 
 .navLinkActive {
-  color: #4c5eff;
+  color: #0051FF;
   background-color: #e0e9ff;
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
 }
 
 .navLinkInactive {
   color: #4b5563;
   background-color: transparent;
-  font-weight: 400;
+  font-weight: var(--font-weight-semibold);
 }
 
 .navLinkInactive:hover {
-  background-color: #f9fafb;
+  background-color: #e1e1e1ca;
 }
 
 .navParent {
   padding: 0.75rem 1rem;
-  font-weight: 600;
-  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -74,14 +83,20 @@
   margin: 0;
   text-align: left;
   transition: color 150ms ease-in-out;
+  color: #6b7280;
 }
 
 .navParentButton:hover {
-  color: #4c5eff;
+  color: #0051FF;
+} 
+
+.navParentButton.navParentActive {
+  color: #0051FF;
 }
 
-.navParentActive {
-  color: #4c5eff;
+/* 접혀있을 때는 항상 회색 */
+.navParentButton:not(.navParentActive) {
+  color: #6b7280;
 }
 
 .chevron {
@@ -132,8 +147,8 @@
 
 .navSubParent {
   padding: 0.5rem 1rem;
-  font-weight: 500;
-  font-size: 0.8125rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
   color: #6b7280;
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
@@ -154,11 +169,11 @@
 }
 
 .navSubParentButton:hover {
-  color: #4c5eff;
+  color: #0051FF;
 }
 
 .navSubParentActive {
-  color: #4c5eff;
+  color: #0051FF;
 }
 
 .navSubSubList {

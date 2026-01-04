@@ -122,3 +122,67 @@
   line-height: 1.75;
 }
 
+/* UI Component 예제 스타일 */
+.ui_card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.ui_card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ui_modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background-color: #f9fafb;
+  min-height: 200px;
+}
+
+.ui_modal_backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.ui_modal_content {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.exampleLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.exampleGroup {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+

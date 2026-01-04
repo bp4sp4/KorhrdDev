@@ -24,7 +24,7 @@ export default function LayoutPage() {
    Layout Wrapper
    ============================================ */
 
-.layout-wrapper {
+.layout_wrapper {
   display: flex;
   min-height: 100vh;
 }
@@ -33,7 +33,7 @@ export default function LayoutPage() {
    Layout Container
    ============================================ */
 
-.layout-container {
+.layout_container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -44,7 +44,7 @@ export default function LayoutPage() {
    Layout Sidebar
    ============================================ */
 
-.layout-sidebar {
+.layout_sidebar {
   width: 280px;
   min-height: 100vh;
   background-color: #f9fafb;
@@ -59,7 +59,7 @@ export default function LayoutPage() {
    Layout Content
    ============================================ */
 
-.layout-content {
+.layout_content {
   flex: 1;
   min-height: 100vh;
   padding: 2rem 1.5rem;
@@ -69,7 +69,7 @@ export default function LayoutPage() {
    Layout Header
    ============================================ */
 
-.layout-header {
+.layout_header {
   width: 100%;
   padding: 1rem 1.5rem;
   background-color: #ffffff;
@@ -83,7 +83,7 @@ export default function LayoutPage() {
    Layout Footer
    ============================================ */
 
-.layout-footer {
+.layout_footer {
   width: 100%;
   padding: 2rem 1.5rem;
   background-color: #f9fafb;

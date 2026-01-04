@@ -24,14 +24,14 @@ export default function ComponentsPage() {
    Layout Classes
    ============================================ */
 
-.layout-container {
+.layout_container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--spacing-4);
 }
 
-.layout-sidebar {
+.layout_sidebar {
   width: 280px;
   min-height: 100vh;
   background-color: #f9fafb;
@@ -42,13 +42,13 @@ export default function ComponentsPage() {
   overflow-y: auto;
 }
 
-.layout-content {
+.layout_content {
   flex: 1;
   min-height: 100vh;
   padding: 2rem 1.5rem;
 }
 
-.layout-wrapper {
+.layout_wrapper {
   display: flex;
   min-height: 100vh;
 }
@@ -77,54 +77,54 @@ export default function ComponentsPage() {
   cursor: not-allowed;
 }
 
-.btn-primary {
+.btn_primary {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
 }
 
-.btn-primary:hover:not(:disabled) {
+.btn_primary:hover:not(:disabled) {
   background-color: var(--color-primary-hover);
 }
 
-.btn-primary:active:not(:disabled) {
+.btn_primary:active:not(:disabled) {
   background-color: var(--color-primary-active);
 }
 
-.btn-secondary {
+.btn_secondary {
   background-color: var(--color-secondary);
   color: var(--color-text-inverse);
 }
 
-.btn-secondary:hover:not(:disabled) {
+.btn_secondary:hover:not(:disabled) {
   background-color: var(--color-secondary-hover);
 }
 
-.btn-secondary:active:not(:disabled) {
+.btn_secondary:active:not(:disabled) {
   background-color: var(--color-secondary-active);
 }
 
-.btn-ghost {
+.btn_ghost {
   background-color: transparent;
   color: var(--color-text-primary);
   border-color: var(--color-border-primary);
 }
 
-.btn-ghost:hover:not(:disabled) {
+.btn_ghost:hover:not(:disabled) {
   background-color: var(--color-gray-50);
   border-color: var(--color-border-secondary);
 }
 
-.btn-ghost:active:not(:disabled) {
+.btn_ghost:active:not(:disabled) {
   background-color: var(--color-gray-100);
 }
 
 /* Button Sizes */
-.btn-sm {
+.btn_sm {
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--font-size-sm);
 }
 
-.btn-lg {
+.btn_lg {
   padding: var(--spacing-4) var(--spacing-6);
   font-size: var(--font-size-lg);
 }
@@ -133,20 +133,20 @@ export default function ComponentsPage() {
    Text Classes
    ============================================ */
 
-.text-caption {
+.text_caption {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
 }
 
-.text-label {
+.text_label {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   line-height: var(--line-height-normal);
 }
 
-.text-helper {
+.text_helper {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
   line-height: var(--line-height-normal);
@@ -157,7 +157,7 @@ export default function ComponentsPage() {
    UI Component Classes
    ============================================ */
 
-.ui-card {
+.ui_card {
   background-color: var(--color-bg-primary);
   border: 1px solid var(--color-border-primary);
   border-radius: var(--radius-lg);
@@ -166,11 +166,11 @@ export default function ComponentsPage() {
   transition: box-shadow var(--transition-fast);
 }
 
-.ui-card:hover {
+.ui_card:hover {
   box-shadow: var(--shadow-md);
 }
 
-.ui-modal {
+.ui_modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -183,7 +183,7 @@ export default function ComponentsPage() {
   padding: var(--spacing-4);
 }
 
-.ui-modal-backdrop {
+.ui_modal_backdrop {
   position: absolute;
   top: 0;
   left: 0;
@@ -193,7 +193,7 @@ export default function ComponentsPage() {
   z-index: var(--z-index-modal-backdrop);
 }
 
-.ui-modal-content {
+.ui_modal_content {
   position: relative;
   z-index: var(--z-index-modal);
   background-color: var(--color-bg-primary);
@@ -210,22 +210,22 @@ export default function ComponentsPage() {
    State Classes
    ============================================ */
 
-.is-active {
+.is_active {
   background-color: var(--color-primary-light);
   color: var(--color-primary);
 }
 
-.is-disabled {
+.is_disabled {
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.is-hidden {
+.is_hidden {
   display: none !important;
 }
 
-.is-visible {
+.is_visible {
   display: block !important;
 }
 

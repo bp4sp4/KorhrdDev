@@ -101,10 +101,23 @@
   margin-bottom: 1rem;
 }
 
+.exampleLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
 .exampleGroup {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .summary {
@@ -120,5 +133,60 @@
 .summaryList {
   padding-left: 1.5rem;
   line-height: 1.75;
+}
+
+/* 예제 스타일 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  border-radius: 0.5rem;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn_primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn_primary:hover {
+  background-color: #3d4eff;
+}
+
+.btn_secondary {
+  background-color: #6b7280;
+  color: #ffffff;
+}
+
+.btn_secondary:hover {
+  background-color: #4b5563;
+}
+
+.ui_card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ui_card_title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.user_profile {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
 }
 

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './sidebar.module.css'
+import Image from 'next/image'
 
 type MenuItemWithChildren = {
   label: string
@@ -36,11 +37,16 @@ const menuItems: MenuItem[] = [
       label: 'CSS 초기 세팅',
       children: [
         { href: '/guide/css-foundation/overview', label: '개요' },
-        { href: '/guide/css-foundation/normalize', label: 'normalize.css' },
-        { href: '/guide/css-foundation/tokens', label: 'tokens.css' },
-        { href: '/guide/css-foundation/base', label: 'base.css' },
-        { href: '/guide/css-foundation/layout', label: 'layout.css' },
-        { href: '/guide/css-foundation/components', label: 'components.css' },
+        {
+          label: '초기세팅',
+          children: [
+            { href: '/guide/css-foundation/normalize', label: 'normalize.css' },
+            { href: '/guide/css-foundation/tokens', label: 'tokens.css' },
+            { href: '/guide/css-foundation/base', label: 'base.css' },
+            { href: '/guide/css-foundation/layout', label: 'layout.css' },
+            { href: '/guide/css-foundation/components', label: 'components.css' },
+          ],
+        },
         {
           label: 'Typography',
           children: [
@@ -113,10 +119,10 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="layout-sidebar">
+    <aside className="layout_sidebar">
       <div className={styles.header}>
-        <Link href="/" className={styles.logo}>
-          개발 가이드
+        <Link href="/" className={styles.logo_container}>
+          <img src="/images/한평생그룹_default_black@2x.png" alt="logo" className={styles.logo_image} />
         </Link>
       </div>
       
@@ -124,22 +130,24 @@ export default function Sidebar() {
         <ul className={styles.navList}>
           {menuItems.map((item, index) => {
             if ('children' in item && item.children) {
+              const menuKey = `menu-${index}`
+              const isOpen = openMenus[menuKey] ?? false
               const isParentActive = item.children.some(child => {
                 if ('children' in child && child.children) {
                   return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
                 }
                 return 'href' in child && pathname === child.href
               })
-              const menuKey = `menu-${index}`
-              const isOpen = openMenus[menuKey] ?? false
+              // 메뉴가 열려있고 활성화된 자식이 있을 때만 파란색 표시
+              const shouldShowActive = isOpen && isParentActive
 
               return (
                 <li key={index} className={styles.navItem}>
                   <button
-                    className={`${styles.navParent} ${styles.navParentButton} ${isParentActive ? styles.navParentActive : ''}`}
+                    className={`${styles.navParent} ${styles.navParentButton} ${shouldShowActive ? styles.navParentActive : ''}`}
                     onClick={() => toggleMenu(menuKey)}
                   >
-                    <span>{item.label}</span>
+                    <a>{item.label}</a>
                     <svg
                       className={`${styles.chevron} ${isOpen ? styles.chevronOpen : styles.chevronClosed}`}
                       width="16"
@@ -161,7 +169,7 @@ export default function Sidebar() {
                         return (
                           <li key={child.label} className={styles.navSubItem}>
                             <button
-                              className={`${styles.navSubParent} ${styles.navSubParentButton} ${isChildParentActive ? styles.navSubParentActive : ''}`}
+                              className={`${styles.navSubParent} ${styles.navSubParentButton} ${isChildParentActive && isSubOpen ? styles.navSubParentActive : ''}`}
                               onClick={() => toggleSubMenu(subMenuKey)}
                             >
                               <span>{child.label}</span>

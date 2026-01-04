@@ -6,9 +6,9 @@ export default function GuideLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="layout-wrapper">
+    <div className="layout_wrapper">
       <Sidebar />
-      <main className="layout-content">
+      <main className="layout_content">
         {children}
       </main>
     </div>

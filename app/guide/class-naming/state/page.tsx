@@ -6,37 +6,38 @@ export default function StatePage() {
     <div className={styles.container}>
       <h1 className={styles.title}>상태 클래스</h1>
       <p className={styles.description}>
-        <code>.is-</code> 접두사는 요소의 현재 상태를 나타낼 때 사용합니다.
+        <code>.is_</code> 접두사는 요소의 현재 상태를 나타낼 때 사용합니다.
       </p>
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>사용 방법</h2>
         <p className={styles.text}>
-          <code>.is-</code> 접두사는 요소가 현재 어떤 상태인지 나타낼 때 사용합니다. 
-          예를 들어 버튼이 활성화되어 있으면 <code>.is-active</code>, 비활성화되어 있으면 <code>.is-disabled</code>, 
-          화면에서 숨겨져 있으면 <code>.is-hidden</code>을 사용합니다.
+          <code>.is_</code> 접두사는 요소가 현재 어떤 상태인지 나타낼 때 사용합니다. 
+          예를 들어 버튼이 활성화되어 있으면 <code>.is_active</code>, 비활성화되어 있으면 <code>.is_disabled</code>, 
+          화면에서 숨겨져 있으면 <code>.is_hidden</code>을 사용합니다.
         </p>
 
         <div className={styles.subsection}>
           <h3 className={styles.subsectionTitleSmall}>사용 예시</h3>
           
-          <CopyableCodeBlock code={`<!-- 활성화 상태 -->
-<button className="btn btn-primary is-active">활성화됨</button>
+          <CopyableCodeBlock code={`// 활성화 상태
+<button className={\`\${styles.btn} \${styles.btn_primary} \${styles.is_active}\`}>활성화됨</button>
 
-<!-- 비활성화 상태 -->
-<button className="btn btn-primary is-disabled">비활성화</button>
+// 비활성화 상태
+<button className={\`\${styles.btn} \${styles.btn_primary} \${styles.is_disabled}\`}>비활성화</button>
 
-<!-- 숨김 상태 -->
-<div className="is-hidden">숨겨진 요소</div>
+// 숨김 상태
+<div className={styles.is_hidden}>숨겨진 요소</div>
 
-<!-- 조건부 적용 -->
-<div className={\`ui-card \${isActive ? 'is-active' : ''}\`}>
+// 조건부 적용
+<div className={\`\${styles.ui_card} \${isActive ? styles.is_active : ''}\`}>
   내용
 </div>`} />
 
+          <p className={styles.exampleLabel}>실제 화면에서 보이는 모습</p>
           <div className={styles.buttonGroup}>
-            <button className="btn btn-primary is-active">Active</button>
-            <button className="btn btn-primary is-disabled">Disabled</button>
+            <button className={`${styles.btn} ${styles.btn_primary} ${styles.is_active}`}>Active</button>
+            <button className={`${styles.btn} ${styles.btn_primary} ${styles.is_disabled}`}>Disabled</button>
           </div>
         </div>
 
