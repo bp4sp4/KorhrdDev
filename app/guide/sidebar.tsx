@@ -87,31 +87,31 @@ export default function Sidebar() {
     const initialOpenSubMenus: Record<string, boolean> = {}
 
     if (pathname) {
-      menuItems.forEach((item, index) => {
-        if ('children' in item && item.children) {
-          const isParentActive = item.children.some(child => {
-            if ('children' in child && child.children) {
-              return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
-            }
-            return 'href' in child && pathname === child.href
-          })
-          if (isParentActive) {
-            initialOpenMenus[`menu-${index}`] = true
-            
-            item.children.forEach((child, childIndex) => {
-              if ('children' in child && child.children) {
-                const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
-                if (isChildParentActive) {
-                  initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
-                }
-              }
-            })
+    menuItems.forEach((item, index) => {
+      if ('children' in item && item.children) {
+        const isParentActive = item.children.some(child => {
+          if ('children' in child && child.children) {
+            return child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
           }
+          return 'href' in child && pathname === child.href
+        })
+        if (isParentActive) {
+          initialOpenMenus[`menu-${index}`] = true
+          
+          item.children.forEach((child, childIndex) => {
+            if ('children' in child && child.children) {
+              const isChildParentActive = child.children.some(grandchild => 'href' in grandchild && pathname === grandchild.href)
+              if (isChildParentActive) {
+                initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true
+              }
+            }
+          })
         }
-      })
+      }
+    })
 
-      setOpenMenus(initialOpenMenus)
-      setOpenSubMenus(initialOpenSubMenus)
+    setOpenMenus(initialOpenMenus)
+    setOpenSubMenus(initialOpenSubMenus)
     }
   }, [pathname])
 
@@ -141,7 +141,7 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="layout_sidebar">
+    <aside className={`layout_sidebar ${styles.sidebar}`}>
       <div className={styles.header}>
         <Link href="/" className={styles.logo_container}>
           <img src="/images/한평생그룹_default_black@2x.png" alt="logo" className={styles.logo_image} />
@@ -261,6 +261,15 @@ export default function Sidebar() {
           })}
         </ul>
       </nav>
+      
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div className={styles.version}>v1.0.0</div>
+          <Link href="/guide/changelog" className={styles.changelogLink}>
+            릴리즈 노트
+          </Link>
+        </div>
+      </footer>
     </aside>
   )
 }

@@ -92,3 +92,5 @@ export default function TypographyCard({ item, index, getTypographyStyle, getCop
   )
 }
 
+
+

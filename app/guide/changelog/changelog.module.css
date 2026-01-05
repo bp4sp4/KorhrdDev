@@ -1,0 +1,60 @@
+.container {
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.subsection {
+  margin-bottom: 2rem;
+}
+
+.subsectionTitle {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.subsectionTitleSmall {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.text {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.list {
+  padding-left: 1.5rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.code {
+  background-color: #e5e7eb;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+  color: #111827;
+}
+
