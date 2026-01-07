@@ -1,0 +1,81 @@
+.container {
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.text {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.orderedList {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.75;
+}
+
+.orderedList li {
+  margin-bottom: 1rem;
+}
+
+.orderedList li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.list {
+  margin: 0.5rem 0 1rem 1.5rem;
+  line-height: 1.75;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1d4ed8;
+}
+
+.downloadButton {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.downloadButton:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+

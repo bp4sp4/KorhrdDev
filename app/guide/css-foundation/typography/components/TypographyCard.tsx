@@ -17,7 +17,7 @@ interface TypographyItem {
 interface TypographyCardProps {
   item: TypographyItem
   index: number
-  getTypographyStyle: (item: TypographyItem) => { fontSize: string; lineHeight: string; letterSpacing: string }
+  getTypographyStyle: (item: TypographyItem) => { fontSize: string; lineHeight: string; letterSpacing: string; fontWeight?: string }
   getCopyCode: (item: TypographyItem) => string
 }
 
