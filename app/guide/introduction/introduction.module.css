@@ -116,3 +116,26 @@
   font-size: 0.875rem;
 }
 
+/* ============================================
+   Link Styles
+   ============================================ */
+
+.text a {
+  color: #0051ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease-in-out;
+  font-weight: 500;
+}
+
+.text a:hover {
+  color: #003dcc;
+  text-decoration-thickness: 2px;
+}
+
+.text a:focus-visible {
+  outline: 2px solid #0051ff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+

@@ -20,95 +20,118 @@ export default function TokensPage() {
  * 타이포그래피 토큰
  */
 
+/* ============================================
+   Pretendard Font Face
+   ============================================ */
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Bold.woff2") format("woff2");
+}
+
 :root {
   /* ============================================
      Typography
      ============================================ */
   
   /* Font Family */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --font-family-base: "Pretendard", sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono",
+    Consolas, "Courier New", monospace;
   
   /* Display */
-  --font-display-1-size: 3.5rem;      /* 56px */
-  --font-display-1-height: 4.5rem;    /* 72px (1.286) */
-  --font-display-1-spacing: -0.0319em;
-  
-  --font-display-2-size: 2.5rem;      /* 40px */
-  --font-display-2-height: 3.25rem;   /* 52px (1.3) */
-  --font-display-2-spacing: -0.0282em;
+  --font-display-1-size: 4.5rem; /* 72px */
+  --font-display-1-height: 6.3rem; /* 100.8px (140%) */
+  --font-display-1-weight: 700;
+
+  --font-display-2-size: 4rem; /* 64px */
+  --font-display-2-height: 5.6rem; /* 89.6px (140%) */
+  --font-display-2-weight: 700;
   
   /* Title */
-  --font-title-1-size: 2.25rem;       /* 36px */
-  --font-title-1-height: 3rem;        /* 48px (1.334) */
-  --font-title-1-spacing: -0.027em;
-  
-  --font-title-2-size: 1.75rem;       /* 28px */
-  --font-title-2-height: 2.375rem;    /* 38px (1.358) */
-  --font-title-2-spacing: -0.0236em;
-  
-  --font-title-3-size: 1.5rem;        /* 24px */
-  --font-title-3-height: 2rem;        /* 32px (1.334) */
-  --font-title-3-spacing: -0.023em;
-  
-  /* Heading */
-  --font-heading-1-size: 1.375rem;    /* 22px */
-  --font-heading-1-height: 1.875rem;  /* 30px (1.364) */
-  --font-heading-1-spacing: -0.0194em;
-  
-  --font-heading-2-size: 1.25rem;     /* 20px */
-  --font-heading-2-height: 1.75rem;   /* 28px (1.4) */
-  --font-heading-2-spacing: -0.012em;
-  
+  --font-title-1-size: 1.75rem; /* 28px */
+  --font-title-1-height: 2.1rem; /* 33.6px (120%) */
+  --font-title-1-weight: 600;
+
+  --font-title-2-size: 1.5rem; /* 24px */
+  --font-title-2-height: 1.8rem; /* 28.8px (120%) */
+  --font-title-2-weight: 600;
+
+  --font-title-3-size: 1.125rem; /* 18px */
+  --font-title-3-height: 1.35rem; /* 21.6px (120%) */
+  --font-title-3-weight: 600;
+
   /* Headline */
-  --font-headline-1-size: 1.125rem;   /* 18px */
-  --font-headline-1-height: 1.625rem; /* 26px (1.445) */
-  --font-headline-1-spacing: -0.002em;
-  
-  --font-headline-2-size: 1.0625rem;  /* 17px */
-  --font-headline-2-height: 1.5rem;    /* 24px (1.412) */
-  --font-headline-2-spacing: 0em;
+  --font-headline-1-size: 2.625rem; /* 42px */
+  --font-headline-1-height: 3.15rem; /* 50.4px (120%) */
+  --font-headline-1-weight: 700;
+
+  --font-headline-2-size: 2.25rem; /* 36px */
+  --font-headline-2-height: 2.7rem; /* 43.2px (120%) */
+  --font-headline-2-weight: 700;
+
+  --font-headline-3-size: 1.75rem; /* 28px */
+  --font-headline-3-height: 2.1rem; /* 33.6px (120%) */
+  --font-headline-3-weight: 700;
   
   /* Body */
-  --font-body-1-size: 1rem;           /* 16px */
-  --font-body-1-height: 1.5rem;       /* 24px (1.5) */
-  --font-body-1-reading-height: 1.625rem; /* 26px (1.625) */
-  --font-body-1-spacing: 0.0057em;
-  
-  --font-body-2-size: 0.9375rem;       /* 15px */
-  --font-body-2-height: 1.375rem;      /* 22px (1.467) */
-  --font-body-2-reading-height: 1.5rem; /* 24px (1.6) */
-  --font-body-2-spacing: 0.0096em;
-  
+  --font-body-1-size: 1.125rem; /* 18px */
+  --font-body-1-height: 1.35rem; /* 21.6px (120%) */
+  --font-body-1-reading-height: 1.575rem; /* 25.2px (140%) */
+  --font-body-1-weight: 400;
+
+  --font-body-2-size: 1rem; /* 16px */
+  --font-body-2-height: 1.2rem; /* 19.2px (120%) */
+  --font-body-2-reading-height: 1.4rem; /* 22.4px (140%) */
+  --font-body-2-weight: 400;
+
   /* Label */
-  --font-label-1-size: 0.875rem;      /* 14px */
-  --font-label-1-height: 1.25rem;      /* 20px (1.429) */
-  --font-label-1-reading-height: 1.375rem; /* 22px (1.571) */
-  --font-label-1-spacing: 0.0145em;
-  
-  --font-label-2-size: 0.8125rem;     /* 13px */
-  --font-label-2-height: 1.125rem;     /* 18px (1.385) */
-  --font-label-2-spacing: 0.0194em;
-  
-  /* Caption */
-  --font-caption-1-size: 0.75rem;     /* 12px */
-  --font-caption-1-height: 1rem;      /* 16px (1.334) */
-  --font-caption-1-spacing: 0.0252em;
-  
-  --font-caption-2-size: 0.6875rem;   /* 11px */
-  --font-caption-2-height: 0.875rem;  /* 14px (1.273) */
-  --font-caption-2-spacing: 0.0311em;
+  --font-label-1-size: 0.875rem; /* 14px */
+  --font-label-1-height: normal; /* normal */
+  --font-label-1-reading-height: normal; /* normal */
+  --font-label-1-weight: 600;
+
+  --font-label-2-size: 0.75rem; /* 12px */
+  --font-label-2-height: normal; /* normal */
+  --font-label-2-weight: 700;
   
   /* Legacy Font Size (호환성) */
-  --font-size-xs: var(--font-caption-1-size);
+  --font-size-xs: var(--font-label-2-size);
   --font-size-sm: var(--font-label-1-size);
   --font-size-base: var(--font-body-1-size);
   --font-size-lg: var(--font-headline-1-size);
-  --font-size-xl: var(--font-heading-2-size);
-  --font-size-2xl: var(--font-title-3-size);
-  --font-size-3xl: var(--font-title-2-size);
-  --font-size-4xl: var(--font-title-1-size);
-  --font-size-5xl: var(--font-display-2-size);
+  --font-size-xl: var(--font-title-3-size);
+  --font-size-2xl: var(--font-title-2-size);
+  --font-size-3xl: var(--font-title-1-size);
+  --font-size-4xl: var(--font-display-2-size);
+  --font-size-5xl: var(--font-display-1-size);
   
   /* Legacy Line Height (호환성) */
   --line-height-tight: 1.25;
@@ -123,6 +146,49 @@ export default function TokensPage() {
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+  /* ============================================
+     Colors
+     ============================================ */
+
+  /* Primary Color */
+  --color-primary: #0051ff;
+
+  /* Blue Palette */
+  --Blue-50: #E5EDFF;
+  --Blue-100: #B2CAFF;
+  --Blue-200: #7FA8FF;
+  --Blue-300: #4C85FF;
+  --Blue-400: #2469FF;
+  --Blue-500: #0051FF;
+  --Blue-600: #0049E5;
+  --Blue-700: #0039B2;
+  --Blue-800: #002980;
+  --Blue-900: #00184D;
+
+  /* Green Palette */
+  --Green-50: #E6FFEC;
+  --Green-100: #C4FFD5;
+  --Green-200: #95FFB6;
+  --Green-300: #4EFF92;
+  --Green-400: #2AF678;
+  --Green-500: #095633;
+  --Green-600: #00E961;
+  --Green-700: #00C257;
+  --Green-800: #009146;
+  --Green-900: #002E19;
+
+  /* Gray Palette */
+  --Gray-50: #FAFAFA;
+  --Gray-100: #F2F2F2;
+  --Gray-200: #E4E4E4;
+  --Gray-300: #D0D0D0;
+  --Gray-400: #B2B2B2;
+  --Gray-500: #919191;
+  --Gray-600: #656565;
+  --Gray-700: #3D3D3D;
+  --Gray-800: #1D1D1D;
+  --Gray-900: #010101;
 }`} />
       </section>
     </div>

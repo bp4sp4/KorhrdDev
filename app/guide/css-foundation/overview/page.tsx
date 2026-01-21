@@ -89,7 +89,7 @@ export default function Component() {
           <Link href="/guide/css-foundation/layout" className={styles.fileLink}>
             <span className={styles.fileNumber}>4</span>
             <div>
-              <h3 className={styles.fileTitle}>layout.css</h3>
+              <h3 className={styles.fileTitle}>layout.css(미완성)</h3>
               <p className={styles.fileDescription}>페이지의 레이아웃 구조를 만드는 클래스들을 정의합니다.</p>
             </div>
           </Link>
@@ -97,7 +97,7 @@ export default function Component() {
           <Link href="/guide/css-foundation/components" className={styles.fileLink}>
             <span className={styles.fileNumber}>5</span>
             <div>
-              <h3 className={styles.fileTitle}>components.css</h3>
+              <h3 className={styles.fileTitle}>components.css(미완성)</h3>
               <p className={styles.fileDescription}>여러 페이지에서 공통으로 사용하는 컴포넌트 스타일을 정의합니다.</p>
             </div>
           </Link>

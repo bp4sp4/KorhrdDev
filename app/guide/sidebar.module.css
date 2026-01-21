@@ -8,7 +8,7 @@
 }
 
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-8);
 }
 
 .logo_container {
@@ -32,7 +32,7 @@
 .navList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
 }
 
 .navItem {
@@ -41,8 +41,8 @@
 
 .navLink {
   display: block;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--spacing-2);
   text-decoration: none;
   transition: all 150ms ease-in-out;
   font-size: var(--font-size-base);
@@ -65,15 +65,27 @@
   background-color: #e1e1e1ca;
 }
 
+.navLinkDisabled {
+  display: block;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--spacing-2);
+  color: #9ca3af;
+  background-color: transparent;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .navParent {
-  padding: 0.75rem 1rem;
+  padding: var(--spacing-3) var(--spacing-4);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
 }
 
 .navParentButton {
@@ -84,7 +96,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.75rem 1rem;
+  padding: var(--spacing-3) var(--spacing-4);
   margin: 0;
   text-align: left;
   transition: color 150ms ease-in-out;
@@ -128,8 +140,8 @@
 .navSubList {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding-left: 0.5rem;
+  gap: var(--spacing-1);
+  padding-left: var(--spacing-2);
   overflow: hidden;
   transition: max-height 300ms ease-in-out, opacity 200ms ease-in-out;
 }
@@ -151,12 +163,12 @@
 }
 
 .navSubParent {
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-2) var(--spacing-4);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   color: #6b7280;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 }
 
 .navSubParentButton {
@@ -167,7 +179,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-2) var(--spacing-4);
   margin: 0;
   text-align: left;
   transition: color 150ms ease-in-out;
@@ -184,8 +196,8 @@
 .navSubSubList {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
-  padding-left: 0.75rem;
+  gap: calc(var(--spacing-1) / 2);
+  padding-left: var(--spacing-3);
   overflow: hidden;
   transition: max-height 300ms ease-in-out, opacity 200ms ease-in-out;
 }
@@ -208,7 +220,7 @@
 
 .footer {
   margin-top: auto;
-  padding: 1.5rem 1rem;
+  padding: var(--spacing-6) var(--spacing-4);
   border-top: 1px solid #e5e7eb;
 }
 

@@ -10,6 +10,58 @@ export default function ChangelogPage() {
 
       {/* 최근 업데이트 */}
       <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>v1.0.1 - 2026년 01월 21일</h2>
+        <p className={styles.text}>
+          이미지/아이콘 활용 가이드와 Spacing 가이드를 추가하고, 사이드바 구조를 정돈했습니다.
+        </p>
+
+        <div className={styles.subsection}>
+          <h3 className={styles.subsectionTitleSmall}>신규 추가</h3>
+          <ul className={styles.list}>
+            <li>
+              <strong>Spacing 가이드</strong> (<code className={styles.code}>/guide/css-foundation/spacing</code>)
+              <ul className={styles.list} style={{ marginTop: '0.5rem' }}>
+                <li>unit-1 ~ unit-15 표와 복사 버튼 제공</li>
+                <li>CSS Modules/전역 CSS 사용 예시 추가</li>
+              </ul>
+            </li>
+            <li>
+              <strong>이미지 & 아이콘 가이드</strong> (<code className={styles.code}>/guide/image-icon-guide</code>)
+              <ul className={styles.list} style={{ marginTop: '0.5rem' }}>
+                <li>Next.js Image 사용법과 Lazy Loading 예시</li>
+                <li>SVG 아이콘 사용 패턴과 포맷 선택 가이드</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.subsection}>
+          <h3 className={styles.subsectionTitleSmall}>구조/내비게이션 변경</h3>
+          <ul className={styles.list}>
+            <li>사이드바 순서를 재정렬: 기본 파일 구조 → CSS 초기 세팅 → layout.tsx 가이드 → 클래스명 가이드</li>
+            <li>layout.css, components.css 항목 비활성화 처리</li>
+            <li>클래스명 가이드의 버튼 섹션을 미완성 상태로 표시하고 상태 섹션 제거</li>
+            <li>레이아웃 가이드, 폼 가이드, 에러 처리 & 상태 링크 제거</li>
+          </ul>
+        </div>
+
+        <div className={styles.subsection}>
+          <h3 className={styles.subsectionTitleSmall}>문서 수정</h3>
+          <ul className={styles.list}>
+            <li>Spacing 가이드: 제목을 “사용 방법 예시”로 변경하고 주의사항 문구 단순화</li>
+          </ul>
+        </div>
+
+        <div className={styles.subsection}>
+          <h3 className={styles.subsectionTitleSmall}>삭제/제거</h3>
+          <ul className={styles.list}>
+            <li>사이드바에서 레이아웃 가이드, 폼 가이드, 에러 처리 & 상태 메뉴 제거</li>
+            <li>이미지 & 아이콘 가이드에서 불필요한 예제 섹션 정리(반응형 이미지, 이미지 최적화 옵션, 이미지 크기 최적화, 인라인 SVG 예제)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className={styles.section}>
         <h2 className={styles.sectionTitle}>v1.0.0 - 2026년 01월 04~05일</h2>
         <p className={styles.text}>
           프론트엔드 개발 표준 가이드 초기 버전입니다. 개발 표준 및 베스트 프랙티스를 안내하는 가이드 시스템을 구축했습니다.
@@ -205,7 +257,6 @@ export default function ChangelogPage() {
         <ul className={styles.list}>
           <li>컴포넌트 가이드 페이지 추가</li>
           <li>TypeScript 가이드 페이지 추가</li>
-          <li>이미지/아이콘 가이드 페이지 추가</li>
           <li>성능 최적화 가이드 페이지 추가</li>
           <li>접근성 가이드 페이지 추가</li>
         </ul>

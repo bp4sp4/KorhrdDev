@@ -131,9 +131,96 @@
   --font-weight-bold: 700;
 
   /* ============================================
+     Spacing
+     ============================================ */
+
+  /* Spacing Unit System (디자이너 표준) */
+  --unit-1: 0.125rem; /* 2px */
+  --unit-2: 0.25rem; /* 4px */
+  --unit-3: 0.5rem; /* 8px */
+  --unit-4: 0.75rem; /* 12px */
+  --unit-5: 1rem; /* 16px */
+  --unit-6: 1.25rem; /* 20px */
+  --unit-7: 1.5rem; /* 24px */
+  --unit-8: 2rem; /* 32px */
+  --unit-9: 2.5rem; /* 40px */
+  --unit-10: 3rem; /* 48px */
+  --unit-11: 3.5rem; /* 56px */
+  --unit-12: 4rem; /* 64px */
+  --unit-13: 6rem; /* 96px */
+  --unit-14: 7.5rem; /* 120px */
+  --unit-15: 10rem; /* 160px */
+
+  /* Spacing Unit 별칭 (호환성 유지) */
+  --spacing-unit-1: var(--unit-1);
+  --spacing-unit-2: var(--unit-2);
+  --spacing-unit-3: var(--unit-3);
+  --spacing-unit-4: var(--unit-4);
+  --spacing-unit-5: var(--unit-5);
+  --spacing-unit-6: var(--unit-6);
+  --spacing-unit-7: var(--unit-7);
+  --spacing-unit-8: var(--unit-8);
+  --spacing-unit-9: var(--unit-9);
+  --spacing-unit-10: var(--unit-10);
+  --spacing-unit-11: var(--unit-11);
+  --spacing-unit-12: var(--unit-12);
+  --spacing-unit-13: var(--unit-13);
+  --spacing-unit-14: var(--unit-14);
+  --spacing-unit-15: var(--unit-15);
+
+  /* Legacy Spacing (호환성 유지) */
+  --spacing-1: var(--unit-2); /* 4px */
+  --spacing-2: var(--unit-3); /* 8px */
+  --spacing-3: var(--unit-4); /* 12px */
+  --spacing-4: var(--unit-5); /* 16px */
+  --spacing-6: var(--unit-7); /* 24px */
+  --spacing-8: var(--unit-8); /* 32px */
+  --spacing-10: var(--unit-9); /* 40px */
+  --spacing-12: var(--unit-10); /* 48px */
+  --spacing-16: var(--unit-12); /* 64px */
+  --spacing-20: var(--unit-13); /* 96px */
+  --spacing-24: var(--unit-13); /* 96px */
+
+  /* ============================================
      Colors
      ============================================ */
 
   /* Primary Color */
   --color-primary: #0051ff;
+
+  /* Blue Palette */
+  --Blue-50: #E5EDFF;
+  --Blue-100: #B2CAFF;
+  --Blue-200: #7FA8FF;
+  --Blue-300: #4C85FF;
+  --Blue-400: #2469FF;
+  --Blue-500: #0051FF;
+  --Blue-600: #0049E5;
+  --Blue-700: #0039B2;
+  --Blue-800: #002980;
+  --Blue-900: #00184D;
+
+  /* Green Palette */
+  --Green-50: #E6FFEC;
+  --Green-100: #C4FFD5;
+  --Green-200: #95FFB6;
+  --Green-300: #4EFF92;
+  --Green-400: #2AF678;
+  --Green-500: #095633;
+  --Green-600: #00E961;
+  --Green-700: #00C257;
+  --Green-800: #009146;
+  --Green-900: #002E19;
+
+  /* Gray Palette */
+  --Gray-50: #FAFAFA;
+  --Gray-100: #F2F2F2;
+  --Gray-200: #E4E4E4;
+  --Gray-300: #D0D0D0;
+  --Gray-400: #B2B2B2;
+  --Gray-500: #919191;
+  --Gray-600: #656565;
+  --Gray-700: #3D3D3D;
+  --Gray-800: #1D1D1D;
+  --Gray-900: #010101;
 }

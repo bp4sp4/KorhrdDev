@@ -14,6 +14,7 @@ type MenuItemWithChildren = {
 type MenuItemWithHref = {
   href: string;
   label: string;
+  disabled?: boolean;
 };
 
 type MenuItem = MenuItemWithChildren | MenuItemWithHref;
@@ -21,19 +22,6 @@ type MenuItem = MenuItemWithChildren | MenuItemWithHref;
 const menuItems: MenuItem[] = [
   { href: "/guide/introduction", label: "가이드 소개" },
   { href: "/guide/file-structure", label: "기본 파일 구조" },
-  { href: "/guide/layout-tsx", label: "layout.tsx 가이드" },
-  {
-    label: "클래스명 가이드",
-    children: [
-      { href: "/guide/class-naming/overview", label: "개요" },
-      { href: "/guide/class-naming/layout", label: "레이아웃" },
-      { href: "/guide/class-naming/component", label: "컴포넌트" },
-      { href: "/guide/class-naming/button", label: "버튼" },
-      { href: "/guide/class-naming/text", label: "텍스트" },
-      { href: "/guide/class-naming/state", label: "상태" },
-      { href: "/guide/class-naming/examples", label: "예제" },
-    ],
-  },
   {
     label: "CSS 초기 세팅",
     children: [
@@ -48,8 +36,8 @@ const menuItems: MenuItem[] = [
           },
           { href: "/guide/css-foundation/tokens", label: "tokens.css" },
           { href: "/guide/css-foundation/base", label: "base.css" },
-          { href: "/guide/css-foundation/layout", label: "layout.css" },
-          { href: "/guide/css-foundation/components", label: "components.css" },
+          { href: "/guide/css-foundation/layout", label: "layout.css(X)", disabled: true },
+          { href: "/guide/css-foundation/components", label: "components.css(X)", disabled: true },
         ],
       },
       {
@@ -68,13 +56,24 @@ const menuItems: MenuItem[] = [
           { href: "/guide/css-foundation/typography/label", label: "Label" },
         ],
       },
+      { href: "/guide/css-foundation/spacing", label: "Spacing" },
+    ],
+  },
+  { href: "/guide/layout-tsx", label: "layout.tsx 가이드" },
+  {
+    label: "클래스명 가이드",
+    children: [
+      { href: "/guide/class-naming/overview", label: "개요" },
+      { href: "/guide/class-naming/layout", label: "레이아웃" },
+      { href: "/guide/class-naming/component", label: "컴포넌트" },
+      { href: "/guide/class-naming/button", label: "버튼 (미완성)", disabled: true },
+      { href: "/guide/class-naming/text", label: "텍스트" },
+      { href: "/guide/class-naming/examples", label: "예제" },
     ],
   },
   { href: "/guide/color-palette", label: "색상 팔레트" },
-  { href: "/guide/layout-guide", label: "레이아웃 가이드" },
   { href: "/guide/logo-guide", label: "로고 가이드" },
-  { href: "/guide/form-guide", label: "폼 가이드" },
-  { href: "/guide/error-handling", label: "에러 처리 & 상태" },
+  { href: "/guide/image-icon-guide", label: "이미지 & 아이콘 가이드" },
   { href: "/guide/responsive-design", label: "반응형 디자인 가이드" },
 ];
 
@@ -280,6 +279,18 @@ export default function Sidebar() {
                                 if ("href" in grandchild) {
                                   const isActive =
                                     mounted && activePath === grandchild.href;
+                                  if (grandchild.disabled) {
+                                    return (
+                                      <li
+                                        key={grandchild.href}
+                                        className={styles.navSubSubItem}
+                                      >
+                                        <span className={styles.navLinkDisabled}>
+                                          {grandchild.label}
+                                        </span>
+                                      </li>
+                                    );
+                                  }
                                   return (
                                     <li
                                       key={grandchild.href}
@@ -305,6 +316,15 @@ export default function Sidebar() {
                         );
                       } else if ("href" in child) {
                         const isActive = mounted && activePath === child.href;
+                        if (child.disabled) {
+                          return (
+                            <li key={child.href} className={styles.navSubItem}>
+                              <span className={styles.navLinkDisabled}>
+                                {child.label}
+                              </span>
+                            </li>
+                          );
+                        }
                         return (
                           <li key={child.href} className={styles.navSubItem}>
                             <Link

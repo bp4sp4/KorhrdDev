@@ -160,3 +160,10 @@
   margin: 0;
 }
 
+.incomplete {
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+

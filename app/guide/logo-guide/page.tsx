@@ -92,44 +92,9 @@ const LogoCard = ({ src, alt, fileName, isDark = false }: LogoItem) => {
 export default function LogoGuidePage() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>로고 가이드</h1>
-      <p className={styles.description}>
-        프로젝트에서 사용하는 로고 사용 규칙입니다. 
-        로고의 크기, 여백, 색상 등 사용 가이드를 확인할 수 있습니다.
-      </p>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>로고 사용 규칙</h2>
-        <p className={styles.text}>
-          로고를 사용할 때는 다음 규칙을 준수해야 합니다.
-        </p>
-
-        <div className={styles.subsection}>
-          <h3 className={styles.subsectionTitle}>최소 여백</h3>
-          <p className={styles.text}>
-            로고 주변에는 최소한의 여백이 필요합니다. 로고의 높이만큼 여백을 확보해야 합니다.
-          </p>
-          <CopyableCodeBlock code={`.logo-container {
-  padding: 1rem; /* 로고 높이와 동일한 여백 */
-}`} />
-        </div>
-
-        <div className={styles.subsection}>
-          <h3 className={styles.subsectionTitle}>최소 크기</h3>
-          <p className={styles.text}>
-            로고는 최소 크기를 유지해야 합니다. 너무 작게 사용하면 가독성이 떨어집니다.
-          </p>
-          <CopyableCodeBlock code={`.logo {
-  min-width: 120px;
-  min-height: 40px;
-}`} />
-        </div>
-
-
-      </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>로고 이미지 목록</h2>
+        <h1 className={styles.title}>로고 이미지 목록</h1>
         <p className={styles.text}>
           프로젝트에서 사용 가능한 모든 로고 이미지입니다. 각 로고는 밝은 배경용(black)과 어두운 배경용(white) 버전을 제공합니다.
           이미지를 클릭하면 다운로드가 가능합니다.

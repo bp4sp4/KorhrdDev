@@ -1,0 +1,194 @@
+.container {
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.text {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: #0051ff;
+}
+
+.pxValue {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.copyButton:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #0051ff;
+}
+
+.copyButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.exampleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.exampleCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.exampleTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.scenarioList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.scenarioItem {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.scenarioTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.scenarioText {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.warningBox {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.warningList {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+.warningList li {
+  margin-bottom: 0.5rem;
+}
+
+.warningList li:last-child {
+  margin-bottom: 0;
+}
+
+.warningList code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background-color: #fee2e2;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #dc2626;
+}

@@ -111,7 +111,7 @@ export default function TextPage() {
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>팁</h2>
-        <div className={styles.tip}>
+        <div className="ui_tip">
           <p>
             <strong>💡 팁:</strong> 텍스트 클래스는 의미에 맞게 사용하는 것이 중요합니다. 
             폼의 라벨은 반드시 <code>.text_label</code>을 사용하고, 

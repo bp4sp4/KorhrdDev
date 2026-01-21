@@ -1,0 +1,226 @@
+.container {
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.text {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.subsection {
+  margin-bottom: 2rem;
+}
+
+.subsectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.exampleCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exampleTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.tipBox {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tipTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.tipList {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+.tipList li {
+  margin-bottom: 0.5rem;
+}
+
+.tipList li:last-child {
+  margin-bottom: 0;
+}
+
+.tipList code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background-color: #e0f2fe;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #0369a1;
+}
+
+.formatGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.formatCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 200ms ease-in-out;
+}
+
+.formatCard:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.formatTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.formatDescription {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.formatUseCase {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.formatUseCase strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.decisionTable {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: #0051ff;
+}
+
+.warningBox {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.warningList {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+.warningList li {
+  margin-bottom: 0.5rem;
+}
+
+.warningList li:last-child {
+  margin-bottom: 0;
+}
+
+.warningList code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background-color: #fee2e2;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #dc2626;
+}

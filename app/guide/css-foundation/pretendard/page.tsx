@@ -237,36 +237,6 @@ export default function PretendardPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>설정 완료</h2>
-        <p className={styles.text}>
-          <code>styles/tokens.css</code> 파일에 Pretendard 폰트 설정이 이미
-          포함되어 있습니다. 폰트 파일만 다운로드하여 <code>public/fonts</code>{" "}
-          폴더에 추가하면 바로 사용할 수 있습니다.
-        </p>
-        <div
-          style={{
-            backgroundColor: "#D1FAE5",
-            padding: "1rem",
-            borderRadius: "0.5rem",
-            borderLeft: "4px solid #10B981",
-            marginTop: "1rem",
-          }}
-        >
-          <p
-            style={{
-              margin: 0,
-              fontSize: "0.875rem",
-              lineHeight: "1.6",
-              color: "#111827",
-            }}
-          >
-            <strong>✅ 완료:</strong> <code>tokens.css</code>에 @font-face와
-            폰트 패밀리 설정이 완료되었습니다. 폰트 파일만 추가하면 바로 사용
-            가능합니다!
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

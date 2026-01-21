@@ -135,10 +135,10 @@ export default function FileStructurePage() {
                   <p>base.css</p>
                 </File>
                 <File value="8" onClick={() => setSelectedFileId('8')}>
-                  <p>components.css</p>
+                  <p>components.css <span className={styles.incomplete}>(미완성)</span></p>
                 </File>
                 <File value="9" onClick={() => setSelectedFileId('9')}>
-                  <p>layout.css</p>
+                  <p>layout.css <span className={styles.incomplete}>(미완성)</span></p>
                 </File>
                 <File value="10" onClick={() => setSelectedFileId('10')}>
                   <p>normalize.css</p>

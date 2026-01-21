@@ -26,14 +26,18 @@
 ### 클래스 네이밍 규칙
 - **소문자와 언더스코어(_)만 사용**
 - BEM 방법론을 단순화한 규칙 적용
-- 접두사로 역할 구분:
-  - `l_`: 레이아웃 관련
-  - `c_`: 컴포넌트 관련
-  - `is_`: 상태 관련 (예: `is_active`, `is_disabled`)
 - 클래스명은 최대 3단계까지만 중첩
 - 의미 있는 단어 사용 (약어 지양)
+- 접두사로 역할 구분
 
-예시:
+#### 접두사별 역할
+- `layout_*`: 레이아웃 관련 (`.layout_wrapper`, `.layout_container`, `.layout_sidebar`, `.layout_content`, `.layout_header`, `.layout_footer`)
+- `ui_*`: UI 컴포넌트 (`.ui_card`, `.ui_modal`, `.ui_modal_backdrop`, `.ui_modal_content`, `.ui_dropdown`, `.ui_tooltip`)
+- `btn_*`: 버튼 스타일 (`.btn`, `.btn_primary`, `.btn_secondary`, `.btn_ghost`, `.btn_sm`, `.btn_lg`)
+- `text_*`: 텍스트 스타일 (`.text_caption`, `.text_label`, `.text_helper`)
+- `is_*`: 상태 표시 (`.is_active`, `.is_disabled`, `.is_hidden`, `.is_visible`)
+
+#### 네이밍 예시
 ```tsx
 // ✅ 올바른 예
 className={styles.container}
@@ -44,6 +48,34 @@ className={styles.button_is_active}
 className={styles.Container}
 className={styles.sectionTitle}
 className={styles.buttonIsActive}
+```
+
+#### 사용 예시
+```tsx
+// 버튼
+<button className={`${styles.btn} ${styles.btn_primary}`}>저장하기</button>
+<button className={`${styles.btn} ${styles.btn_secondary}`}>취소</button>
+<button className={`${styles.btn} ${styles.btn_ghost}`}>더보기</button>
+<button className={`${styles.btn} ${styles.btn_primary} ${styles.btn_sm}`}>작은 버튼</button>
+
+// 레이아웃
+<div className={styles.layout_wrapper}>
+  <aside className={styles.layout_sidebar}>사이드바</aside>
+  <main className={styles.layout_content}>콘텐츠</main>
+</div>
+
+// UI 컴포넌트
+<div className={styles.ui_card}>
+  <h3 className={styles.ui_card_title}>제목</h3>
+  <p className={styles.ui_card_description}>설명</p>
+</div>
+
+// 폼
+<div className={styles.form_field}>
+  <label className={styles.text_label}>이메일</label>
+  <input type="email" className={styles.input} placeholder="example@email.com" />
+  <span className={styles.text_helper}>올바른 이메일 형식을 입력해주세요</span>
+</div>
 ```
 
 ### CSS Modules 사용
@@ -152,12 +184,7 @@ import styles from './page.module.css'
 
 #### 2. tokens.css
 - Pretendard 폰트 face 정의 (Regular, Medium, SemiBold, Bold)
-- CSS 변수로 타이포그래피 토큰 정의:
-  - Display (1, 2)
-  - Title (1, 2, 3)
-  - Headline (1, 2, 3)
-  - Body (1, 2)
-  - Label (1, 2)
+- CSS 변수로 타이포그래피 토큰 정의
 - 폰트 패밀리, 크기, 높이, 굵기 정의
 - 색상 토큰 정의 (Primary 등)
 - 레거시 호환성을 위한 변수 포함
@@ -221,4 +248,270 @@ import '../styles/components.css'
 - `base.css`에서 Tailwind를 import하여 전역으로 사용 가능
 - CSS Modules와 Tailwind를 함께 사용 가능
 - `cn()` 함수로 클래스 병합
+
+## Typography 시스템
+
+### 타이포그래피 스케일
+프로젝트에서는 일관된 타이포그래피 시스템을 사용합니다. 모든 타이포그래피 스타일은 CSS 변수로 정의되어 있습니다.
+
+#### 타이포그래피 카테고리
+1. **Display** - 대형 제목, 히어로 섹션
+   - Display 1: 72px / 100.8px (140%) / Bold (700)
+   - Display 2: 64px / 89.6px (140%) / Bold (700)
+
+2. **Headline** - 섹션 제목, 중간 제목
+   - Headline 1: 42px / 50.4px (120%) / Bold (700)
+   - Headline 2: 36px / 43.2px (120%) / Bold (700)
+   - Headline 3: 28px / 33.6px (120%) / Bold (700)
+
+3. **Title** - 카드 제목, 소제목
+   - Title 1: 28px / 33.6px (120%) / SemiBold (600)
+   - Title 2: 24px / 28.8px (120%) / SemiBold (600)
+   - Title 3: 18px / 21.6px (120%) / SemiBold (600)
+
+4. **Body** - 본문 텍스트
+   - Body 1/Normal: 18px / 21.6px (120%) / Regular (400)
+   - Body 1/Reading: 18px / 25.2px (140%) / Regular (400) - 장문 읽기용
+   - Body 2/Normal: 16px / 19.2px (120%) / Regular (400)
+   - Body 2/Reading: 16px / 22.4px (140%) / Regular (400) - 장문 읽기용
+
+5. **Label** - 라벨, 작은 텍스트
+   - Label 1: 14px / normal / SemiBold (600)
+   - Label 2: 12px / normal / Bold (700)
+
+### CSS 변수 사용 규칙
+
+#### 타이포그래피 CSS 변수 구조
+각 타이포그래피 스타일은 다음과 같은 변수로 정의됩니다:
+- `--font-{category}-{number}-size`: 폰트 크기
+- `--font-{category}-{number}-height`: 줄 높이
+- `--font-{category}-{number}-weight`: 폰트 굵기
+- `--font-{category}-{number}-reading-height`: 읽기용 줄 높이 (Body만 해당)
+
+#### 사용 예시
+
+##### CSS Modules에서 사용
+```css
+/* component.module.css */
+.title {
+  font-size: var(--font-title-1-size);
+  line-height: var(--font-title-1-height);
+  font-weight: var(--font-title-1-weight);
+}
+
+.body_text {
+  font-size: var(--font-body-1-size);
+  line-height: var(--font-body-1-height);
+  font-weight: var(--font-body-1-weight);
+}
+
+.body_reading {
+  font-size: var(--font-body-1-size);
+  line-height: var(--font-body-1-reading-height);
+  font-weight: var(--font-body-1-weight);
+}
+```
+
+##### 전역 CSS 클래스에서 사용
+```css
+.text_display_1 {
+  font-size: var(--font-display-1-size);
+  line-height: var(--font-display-1-height);
+  font-weight: var(--font-display-1-weight);
+}
+
+.text_headline_1 {
+  font-size: var(--font-headline-1-size);
+  line-height: var(--font-headline-1-height);
+  font-weight: var(--font-headline-1-weight);
+}
+
+.text_body_1 {
+  font-size: var(--font-body-1-size);
+  line-height: var(--font-body-1-height);
+  font-weight: var(--font-body-1-weight);
+}
+```
+
+##### React/TSX에서 사용
+```tsx
+// CSS Modules 사용
+<div className={styles.title}>제목</div>
+<p className={styles.body_text}>본문 텍스트</p>
+<p className={styles.body_reading}>긴 문단의 읽기용 텍스트</p>
+
+// 전역 클래스 사용
+<h1 className="text_display_1">대형 제목</h1>
+<h2 className="text_headline_1">섹션 제목</h2>
+<p className="text_body_1">본문 텍스트</p>
+
+// 인라인 스타일 (비권장, 특수한 경우만)
+<h1 style={{
+  fontSize: 'var(--font-display-1-size)',
+  lineHeight: 'var(--font-display-1-height)',
+  fontWeight: 'var(--font-display-1-weight)'
+}}>제목</h1>
+```
+
+### 타이포그래피 선택 가이드
+
+#### 사용 시나리오별 권장 사항
+- **히어로 섹션, 대형 배너**: Display 1, Display 2
+- **페이지 제목, 주요 섹션 제목**: Headline 1, Headline 2
+- **카드 제목, 폼 제목**: Title 1, Title 2, Title 3
+- **일반 본문, 짧은 설명**: Body 1/Normal, Body 2/Normal
+- **장문 본문, 블로그 글**: Body 1/Reading, Body 2/Reading
+- **라벨, 캡션, 부가 설명**: Label 1, Label 2
+
+### 레거시 변수 (호환성)
+기존 코드와의 호환성을 위해 다음 레거시 변수도 제공됩니다:
+- `--font-size-xs`: Label 2 크기
+- `--font-size-sm`: Label 1 크기
+- `--font-size-base`: Body 1 크기
+- `--font-size-lg`: Headline 1 크기
+- `--font-size-xl`: Title 3 크기
+- `--font-size-2xl`: Title 2 크기
+- `--font-size-3xl`: Title 1 크기
+- `--font-size-4xl`: Display 2 크기
+- `--font-size-5xl`: Display 1 크기
+
+### 폰트 패밀리
+- **Base**: `--font-family-base` - 기본 폰트 (Pretendard)
+- **Mono**: `--font-family-mono` - 코드용 폰트
+
+### 폰트 굵기
+- `--font-weight-light`: 300
+- `--font-weight-normal`: 400
+- `--font-weight-medium`: 500
+- `--font-weight-semibold`: 600
+- `--font-weight-bold`: 700
+
+### 주의사항
+- ❌ 하드코딩된 폰트 크기 사용 금지 (예: `font-size: 24px`)
+- ❌ CSS 변수 없이 직접 값 사용 금지
+- ✅ 항상 CSS 변수 사용 (`var(--font-*-size)` 등)
+- ✅ 읽기용 텍스트는 `reading-height` 변수 사용
+- ✅ 의미에 맞는 타이포그래피 스타일 선택
+
+## Spacing 시스템
+
+### Spacing 스케일
+프로젝트에서는 일관된 간격 시스템을 사용합니다. Spacing Unit 시스템으로 정의되어 있으며, CSS 변수로 정의되어 있습니다.
+
+#### Spacing Unit 변수 목록 (기본 사용 - 디자이너 표준)
+- `--unit-1`: 0.125rem (2px)
+- `--unit-2`: 0.25rem (4px)
+- `--unit-3`: 0.5rem (8px)
+- `--unit-4`: 0.75rem (12px)
+- `--unit-5`: 1rem (16px)
+- `--unit-6`: 1.25rem (20px)
+- `--unit-7`: 1.5rem (24px)
+- `--unit-8`: 2rem (32px)
+- `--unit-9`: 2.5rem (40px)
+- `--unit-10`: 3rem (48px)
+- `--unit-11`: 3.5rem (56px)
+- `--unit-12`: 4rem (64px)
+- `--unit-13`: 6rem (96px)
+- `--unit-14`: 7.5rem (120px)
+- `--unit-15`: 10rem (160px)
+
+#### Spacing Unit 별칭 (호환성)
+기존 코드와의 호환성을 위해 다음 별칭도 제공됩니다:
+- `--spacing-unit-1` ~ `--spacing-unit-15`: `--unit-1` ~ `--unit-15`의 별칭
+
+#### Legacy Spacing 변수 (호환성)
+기존 코드와의 호환성을 위해 다음 변수도 제공됩니다:
+- `--spacing-1`: 0.25rem (4px) - unit-2와 동일
+- `--spacing-2`: 0.5rem (8px) - unit-3와 동일
+- `--spacing-3`: 0.75rem (12px) - unit-4와 동일
+- `--spacing-4`: 1rem (16px) - unit-5와 동일
+- `--spacing-6`: 1.5rem (24px) - unit-7와 동일
+- `--spacing-8`: 2rem (32px) - unit-8와 동일
+- `--spacing-10`: 2.5rem (40px) - unit-9와 동일
+- `--spacing-12`: 3rem (48px) - unit-10와 동일
+- `--spacing-16`: 4rem (64px) - unit-12와 동일
+- `--spacing-20`: 6rem (96px) - unit-13와 동일
+- `--spacing-24`: 6rem (96px) - unit-13와 동일
+
+### CSS 변수 사용 규칙
+
+#### Spacing 변수 구조
+간격은 다음과 같은 변수로 정의됩니다:
+- `--unit-{number}`: Spacing Unit 시스템 (1~15) - **디자이너 표준, 기본 사용**
+- `--spacing-unit-{number}`: `--unit-{number}`의 별칭 (호환성)
+- `--spacing-{number}`: Legacy 변수 (호환성 유지)
+
+#### 사용 예시
+
+##### CSS Modules에서 사용
+```css
+/* component.module.css */
+.container {
+  padding: var(--unit-5); /* 16px */
+  margin-bottom: var(--unit-7); /* 24px */
+  gap: var(--unit-3); /* 8px */
+}
+
+.section {
+  padding: var(--unit-7) var(--unit-8); /* 24px 32px */
+  margin-top: var(--unit-5); /* 16px */
+}
+```
+
+##### 전역 CSS 클래스에서 사용
+```css
+.card {
+  padding: var(--unit-5); /* 16px */
+  margin-bottom: var(--unit-7); /* 24px */
+  gap: var(--unit-4); /* 12px */
+}
+
+.sidebar {
+  padding: var(--unit-7); /* 24px */
+  gap: var(--unit-3); /* 8px */
+}
+```
+
+##### React/TSX에서 사용
+```tsx
+// CSS Modules 사용
+<div className={styles.container}>콘텐츠</div>
+
+// 전역 클래스 사용
+<div className="ui_card">카드 내용</div>
+
+// 인라인 스타일 (비권장, 특수한 경우만)
+<div style={{ padding: 'var(--unit-5)', gap: 'var(--unit-3)' }}>
+  콘텐츠
+</div>
+```
+```
+
+### Spacing 선택 가이드
+
+#### 사용 시나리오별 권장 사항
+- **컨테이너 내부 여백**: `--unit-5` (16px) 또는 `--unit-7` (24px)
+- **컴포넌트 간 간격**: `--unit-3` (8px) 또는 `--unit-4` (12px)
+- **섹션 간 간격**: `--unit-7` (24px) 또는 `--unit-8` (32px)
+- **큰 섹션 간격**: `--unit-10` (48px) 또는 `--unit-12` (64px)
+- **작은 요소 간 간격**: `--unit-2` (4px) 또는 `--unit-3` (8px)
+- **버튼 내부 여백**: `--unit-4` (12px) 세로, `--unit-5` (16px) 가로
+- **매우 작은 간격**: `--unit-1` (2px)
+
+#### 사이드바 Spacing 가이드
+- **사이드바 전체 패딩**: `--unit-7` (24px)
+- **헤더 하단 여백**: `--unit-8` (32px)
+- **메뉴 항목 간격**: `--unit-3` (8px)
+- **서브메뉴 들여쓰기**: `--unit-3` (8px) 또는 `--unit-4` (12px)
+- **메뉴 항목 내부 패딩**: `--unit-4` (12px) 세로, `--unit-5` (16px) 가로
+- **푸터 패딩**: `--unit-7` (24px) 세로, `--unit-5` (16px) 가로
+
+### 주의사항
+- ❌ 하드코딩된 간격 값 사용 금지 (예: `padding: 16px`, `margin: 24px`)
+- ❌ CSS 변수 없이 직접 rem/px 값 사용 금지
+- ✅ 항상 CSS 변수 사용 (`var(--unit-*)` 또는 `var(--spacing-unit-*)`, `var(--spacing-*)`)
+- ✅ **디자이너 표준에 맞춰 `--unit-*` 사용 권장** (예: `var(--unit-5, 16px)`)
+- ✅ 의미에 맞는 간격 선택 (작은 간격: unit-1~3, 중간 간격: unit-4~7, 큰 간격: unit-8~15)
+- ✅ 일관된 간격 시스템 유지
+- ✅ Spacing Unit 시스템을 우선적으로 사용
 

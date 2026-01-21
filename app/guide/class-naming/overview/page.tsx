@@ -53,7 +53,7 @@ export default function ClassNamingOverviewPage() {
 .text_label
 .text_helper`} />
           
-          <div className={styles.tip}>
+          <div className="ui_tip">
             <p>
               <strong>💡 팁:</strong> 접두사를 사용하면 클래스명만 봐도 "아, 이건 레이아웃이구나", "이건 버튼이구나"라고 바로 알 수 있어서 코드를 읽기가 쉬워집니다.
             </p>
@@ -77,7 +77,7 @@ export default function ClassNamingOverviewPage() {
 /* CSS Modules 사용 시 */
 className={styles.block_element_modifier}`} />
 
-          <div className={styles.tip}>
+          <div className="ui_tip">
             <p>
               <strong>💡 팁:</strong> 언더스코어만 사용하면 키보드 입력이 빠르고, 대부분의 코드 에디터에서 자동완성이 더 잘 작동합니다.
             </p>

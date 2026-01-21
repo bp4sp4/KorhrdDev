@@ -49,10 +49,6 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
 }
 
 body {
@@ -61,10 +57,6 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
-  -webkit-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
 }
 
 /* ============================================
@@ -241,14 +233,7 @@ select:focus-visible {
    Selection
    ============================================ */
 
-html,
-body {
-  -webkit-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
-}
-
+/* 기본적으로 텍스트 선택 허용 */
 * {
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -256,37 +241,17 @@ body {
   user-select: text;
 }
 
+/* 텍스트 요소는 강제로 선택 허용 */
 p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-div,
-li,
-td,
-th,
-label {
+h1, h2, h3, h4, h5, h6,
+span, div, li, td, th, label {
   -webkit-user-select: text !important;
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   user-select: text !important;
 }
 
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
+/* 입력 필드는 텍스트 선택 허용 */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -299,6 +264,19 @@ textarea {
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   user-select: text !important;
+}
+
+/* 버튼과 체크박스 등은 텍스트 선택 비활성화 */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ::selection {
