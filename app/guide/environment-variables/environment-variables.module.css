@@ -45,28 +45,12 @@
   line-height: 1.75;
 }
 
-.codeBlock {
-  background-color: #000000;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.codeBlock pre {
-  margin: 0;
-  font-size: 0.875rem;
-  color: #ffffff;
-}
-
-.codeBlock code {
-  color: #ffffff;
-}
-
 .tip {
   background-color: #E5EDFF;
   padding: 1rem;
   border-radius: 0.5rem;
   border-left: 4px solid #4C85FF;
+  margin-bottom: 1rem;
 }
 
 .tip p {
@@ -81,6 +65,7 @@
   padding: 1rem;
   border-radius: 0.5rem;
   border-left: 4px solid #FFB84C;
+  margin-bottom: 1rem;
 }
 
 .warning p {
@@ -93,33 +78,35 @@
 .list {
   padding-left: 1.5rem;
   line-height: 1.75;
-}
-
-.buttonGroup {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
-.exampleGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.list li {
+  margin-bottom: 0.5rem;
 }
 
-.summary {
-  background-color: #f9fafb;
-  padding: 2rem;
-  border-radius: 0.75rem;
-}
-
-.summaryTitle {
-  margin-bottom: 1rem;
-}
-
-.summaryList {
+.orderedList {
+  margin: 1rem 0;
   padding-left: 1.5rem;
+  color: #4b5563;
   line-height: 1.75;
 }
 
+.orderedList li {
+  margin-bottom: 1rem;
+}
+
+.orderedList li strong {
+  color: #111827;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.code {
+  background-color: #e5e7eb;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  color: #111827;
+}

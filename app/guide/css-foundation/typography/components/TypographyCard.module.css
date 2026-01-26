@@ -24,7 +24,8 @@
 }
 
 .name {
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
   font-weight: 600;
   color: #111827;
   margin: 0 0 0.5rem 0;

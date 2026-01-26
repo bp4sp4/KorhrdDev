@@ -71,16 +71,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-headline-2-size);
+  line-height: var(--font-headline-2-height);
   font-weight: var(--font-weight-bold);
 }
 
 h2 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-title-1-size);
+  line-height: var(--font-title-1-height);
 }
 
 h3 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-title-2-size);
+  line-height: var(--font-title-2-height);
 }
 
 h4 {

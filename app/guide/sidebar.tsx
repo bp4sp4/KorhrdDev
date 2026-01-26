@@ -4,7 +4,6 @@ import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./sidebar.module.css";
-import Image from "next/image";
 
 type MenuItemWithChildren = {
   label: string;
@@ -36,8 +35,16 @@ const menuItems: MenuItem[] = [
           },
           { href: "/guide/css-foundation/tokens", label: "tokens.css" },
           { href: "/guide/css-foundation/base", label: "base.css" },
-          { href: "/guide/css-foundation/layout", label: "layout.css(X)", disabled: true },
-          { href: "/guide/css-foundation/components", label: "components.css(X)", disabled: true },
+          {
+            href: "/guide/css-foundation/layout",
+            label: "layout.css(X)",
+            disabled: true,
+          },
+          {
+            href: "/guide/css-foundation/components",
+            label: "components.css(X)",
+            disabled: true,
+          },
         ],
       },
       {
@@ -60,13 +67,18 @@ const menuItems: MenuItem[] = [
     ],
   },
   { href: "/guide/layout-tsx", label: "layout.tsx 가이드" },
+  { href: "/guide/environment-variables", label: "환경 변수 관리" },
   {
     label: "클래스명 가이드",
     children: [
       { href: "/guide/class-naming/overview", label: "개요" },
       { href: "/guide/class-naming/layout", label: "레이아웃" },
       { href: "/guide/class-naming/component", label: "컴포넌트" },
-      { href: "/guide/class-naming/button", label: "버튼 (미완성)", disabled: true },
+      {
+        href: "/guide/class-naming/button",
+        label: "버튼 (미완성)",
+        disabled: true,
+      },
       { href: "/guide/class-naming/text", label: "텍스트" },
       { href: "/guide/class-naming/examples", label: "예제" },
     ],
@@ -99,7 +111,7 @@ export default function Sidebar() {
             if ("children" in child && child.children) {
               return child.children.some(
                 (grandchild) =>
-                  "href" in grandchild && pathname === grandchild.href
+                  "href" in grandchild && pathname === grandchild.href,
               );
             }
             return "href" in child && pathname === child.href;
@@ -111,7 +123,7 @@ export default function Sidebar() {
               if ("children" in child && child.children) {
                 const isChildParentActive = child.children.some(
                   (grandchild) =>
-                    "href" in grandchild && pathname === grandchild.href
+                    "href" in grandchild && pathname === grandchild.href,
                 );
                 if (isChildParentActive) {
                   initialOpenSubMenus[`submenu-${index}-${childIndex}`] = true;
@@ -176,7 +188,7 @@ export default function Sidebar() {
                         return child.children.some(
                           (grandchild) =>
                             "href" in grandchild &&
-                            activePath === grandchild.href
+                            activePath === grandchild.href,
                         );
                       }
                       return "href" in child && activePath === child.href;
@@ -226,7 +238,7 @@ export default function Sidebar() {
                             ? child.children.some(
                                 (grandchild) =>
                                   "href" in grandchild &&
-                                  activePath === grandchild.href
+                                  activePath === grandchild.href,
                               )
                             : false;
                         const subMenuKey = `submenu-${index}-${childIndex}`;
@@ -285,7 +297,9 @@ export default function Sidebar() {
                                         key={grandchild.href}
                                         className={styles.navSubSubItem}
                                       >
-                                        <span className={styles.navLinkDisabled}>
+                                        <span
+                                          className={styles.navLinkDisabled}
+                                        >
                                           {grandchild.label}
                                         </span>
                                       </li>
@@ -367,7 +381,7 @@ export default function Sidebar() {
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <div className={styles.version}>v1.0.0</div>
+          <div className={styles.version}>v1.0.1</div>
           <Link href="/guide/changelog" className={styles.changelogLink}>
             릴리즈 노트
           </Link>

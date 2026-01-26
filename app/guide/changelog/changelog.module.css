@@ -26,12 +26,14 @@
 
 .subsectionTitle {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
 }
 
 .subsectionTitleSmall {
   margin-bottom: 1rem;
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
 }
 
 .text {

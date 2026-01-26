@@ -19,7 +19,8 @@
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #e5e7eb;
-  font-size: 1.5rem;
+  font-size: var(--font-title-2-size);
+  line-height: var(--font-title-2-height);
   font-weight: 600;
   color: #111827;
 }
@@ -35,7 +36,8 @@
 }
 
 .subsectionTitle {
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
   font-weight: 600;
   color: #111827;
   margin-bottom: 1rem;
@@ -116,7 +118,8 @@
 }
 
 .formatTitle {
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.75rem;

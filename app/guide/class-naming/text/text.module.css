@@ -26,12 +26,14 @@
 
 .subsectionTitle {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
 }
 
 .subsectionTitleSmall {
   margin-bottom: 1rem;
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
 }
 
 .text {
@@ -152,7 +154,8 @@
 }
 
 .infoBoxTitle {
-  font-size: 1rem;
+  font-size: var(--font-body-2-size);
+  line-height: var(--font-body-2-height);
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.75rem;

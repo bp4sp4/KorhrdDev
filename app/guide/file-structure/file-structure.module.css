@@ -128,7 +128,8 @@
 }
 
 .descriptionTitle {
-  font-size: 1.125rem;
+  font-size: var(--font-title-3-size);
+  line-height: var(--font-title-3-height);
   font-weight: 600;
   color: #111827;
   margin-bottom: 1rem;
@@ -166,4 +167,3 @@
   font-weight: 500;
   margin-left: 0.5rem;
 }
-
